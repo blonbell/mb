@@ -61,7 +61,7 @@
     <asp:Panel ID="shopPanel" CssClass="master-content" runat="server">
         <div class="wrapFrames">
             <div class="frame-border inline">
-                <p>Train your attack!</p>
+                <p>Train your Attack!</p>
                 <asp:ImageButton ID="btnAtk" CssClass="desc-image mid-large-icon" ImageUrl="~/images/Attack-Icon.png" 
                     runat="server" onclick ="btnAtk_Click" />
                 <p class="clear-float"><span class="desc-left">Effect</span><span class="desc-right">+<%= effect %>ATK</span></p>
@@ -81,7 +81,7 @@
                 <asp:ImageButton ID="btnSpd" CssClass="desc-image mid-large-icon" ImageUrl="~/images/Speed-Icon.png" 
                     runat="server" OnClick="btnSpd_Click" />
                 <p class="clear-float"><span class="desc-left">Effect</span><span class="desc-right">+<%= effect %>SPD</span></p>
-                <p class="clear-float"><span class="desc-left">Cost</span><span class="desc-right"><%= usage %>points</span></p>
+                <p class="clear-float"><span class="desc-left">Cost</span><span class="desc-right"><%= usage %>MP</span></p>
                 <p class="clear-float"><span class="desc-left">Time</span><span class="desc-right"><%= trainingHour %>hours</span></p>
             </div>
         </div>
@@ -92,8 +92,11 @@
             <div class="frame-border inline width-90">
                 <div id ="trainingPanel-left" class="inline">
                     <asp:Image ID="trainingImgIcon" CssClass="desc-image large-icon" runat="server" />
-                    <p class="clear-float"><span class="desc-left">Effect</span><span class="desc-right"><%= effect %>points</span></p>
-                    <p class="clear-float"><span class="desc-left">Time</span><span class="desc-right"><%= trainingHour %>hours</span></p>
+                    <p class="clear-float">
+                        <span class="desc-left">Effect</span><span class="desc-right">
+                            +<%= effect %> <%= user.character.trainingType.ToString() %>
+                        </span>
+                    </p>
                 </div>
                 <div id = "trainingPanel-right" class="inline">
                     <div>
@@ -108,6 +111,19 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </asp:Panel>
+
+    <asp:Button runat="server" ID="btn_hiddenUnused" style="display:none" />
+
+    <ajaxToolkit:ModalPopupExtender BackgroundCssClass="modal-popup-background" runat="server" ID="popupext_vote" TargetControlID="btn_hiddenUnused" PopupControlID="pnl_popupVote" 
+        OkControlID="btn_popupClose"></ajaxToolkit:ModalPopupExtender>
+    
+    <asp:Panel CssClass="panel-popup popup-vote" runat="server" ID="pnl_popupVote" DefaultButton="btn_popupClose">
+        <div id="Div1" runat="server">
+            <asp:Label runat="server" ID="lbl_popupMessage" Text="Thank you for voting!"></asp:Label>
+            <br />
+            <asp:Button runat="server" ID="btn_popupClose" Text="OK" />
         </div>
     </asp:Panel>
 </asp:Content>

@@ -28,11 +28,13 @@
                 </div>
             </div>
             <div id="versusLogoDiv">
-                <img id="versusLogo" src="images/vs.png" alt="Versus" />
+                <img id="versusLogo" class="duelResult" src="images/vs.png" alt="Versus" />
             </div>
             <div id="opponent" class="opp-item">
                 <p class="big"><%= opponent.Name %></p>
                 <asp:Image ID="imgOther" CssClass="thumbnail" runat="server" />
+                <div style="height:22px;">
+                </div>
             </div>
             <div>
                 <asp:Literal ID="lblMessage" runat="server"></asp:Literal>

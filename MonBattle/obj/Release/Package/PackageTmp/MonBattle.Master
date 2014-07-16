@@ -45,8 +45,9 @@
     </script>    
 
     <ajaxToolkit:ToolkitScriptManager runat="server" ID="scriptManager"></ajaxToolkit:ToolkitScriptManager>
-
+    
     <div class="banner" id="div_banner" runat="server" visible="false">
+        <div style="float:right; "><a href="mailto:admin@monbattle.com">Send Feedback</a></div>
         <asp:ImageButton runat="server" ID="img_banner" Width="600px" Height="100px" Visible="false" />
     </div>
 
@@ -72,6 +73,7 @@
                         <asp:MenuItem ImageUrl="~/images/taskbar-profile-icon.png" Selectable="false">
                             <asp:MenuItem Text="Create A Character" NavigateUrl="~/CreateAChar.aspx" />
                             <asp:MenuItem Text="View Character" NavigateUrl="~/ViewCharacter.aspx" />
+                            <asp:MenuItem Text="Abilities - Soon" Selectable="false" />
                         </asp:MenuItem>
                         <asp:MenuItem ImageUrl="~/images/taskbar-battle-icon.png" NavigateUrl="~/Battle.aspx" Selectable="false">
                             <asp:MenuItem Text="Battle" NavigateUrl="~/Battle.aspx" />
@@ -80,7 +82,7 @@
                         </asp:MenuItem>
                         <asp:MenuItem ImageUrl="~/images/taskbar-social-icon.png" Selectable="false">
                             <asp:MenuItem Text="Vote" NavigateUrl="~/Default.aspx" />
-                            <asp:MenuItem Text="Past Battle" NavigateUrl="~/PassBattles.aspx" />
+                            <asp:MenuItem Text="Past Voting Results" NavigateUrl="~/PastBattles.aspx" />
                             <asp:MenuItem Text="Guilds - Soon" Selectable="false" />
                             <asp:MenuItem Text="Trade - Soon" Selectable="false" />
                             <asp:MenuItem Text="Leaderboard - Soon" Selectable="false" />

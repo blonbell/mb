@@ -12,7 +12,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="About.aspx">
-      <publishTime>12/04/2014 21:56:32</publishTime>
+      <publishTime>04/12/2014 21:56:32</publishTime>
     </File>
     <File Include="Admin/AddNeutralMonster.aspx">
       <publishTime>07/13/2014 15:55:27</publishTime>
@@ -24,25 +24,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/25/2014 11:57:38</publishTime>
     </File>
     <File Include="Admin/Battle.aspx">
-      <publishTime>03/05/2014 10:33:48</publishTime>
+      <publishTime>05/03/2014 10:33:48</publishTime>
     </File>
     <File Include="Admin/Battles.aspx">
-      <publishTime>10/04/2014 00:36:38</publishTime>
+      <publishTime>04/10/2014 00:36:38</publishTime>
     </File>
     <File Include="Admin/Card.aspx">
       <publishTime>03/29/2014 23:18:48</publishTime>
     </File>
     <File Include="Admin/Cards.aspx">
-      <publishTime>07/04/2014 23:20:42</publishTime>
+      <publishTime>04/07/2014 23:20:42</publishTime>
     </File>
     <File Include="Admin/Default.aspx">
       <publishTime>03/30/2014 17:44:52</publishTime>
     </File>
     <File Include="Admin/NeutralCharacterListing.aspx">
-      <publishTime>07/13/2014 16:57:51</publishTime>
+      <publishTime>07/16/2014 14:46:35</publishTime>
     </File>
     <File Include="Admin/ResetBattleCounter.aspx">
-      <publishTime>07/13/2014 16:49:02</publishTime>
+      <publishTime>07/16/2014 14:55:18</publishTime>
     </File>
     <File Include="Admin/User.aspx">
       <publishTime>03/29/2014 12:41:26</publishTime>
@@ -159,7 +159,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2014 09:20:14</publishTime>
     </File>
     <File Include="bin/MonBattle.dll">
-      <publishTime>07/14/2014 00:36:21</publishTime>
+      <publishTime>07/16/2014 15:56:01</publishTime>
     </File>
     <File Include="bin/nl/AjaxControlToolkit.resources.dll">
       <publishTime>03/30/2014 09:20:14</publishTime>
@@ -213,16 +213,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2014 09:20:14</publishTime>
     </File>
     <File Include="CreateAChar.aspx">
-      <publishTime>06/07/2014 18:13:10</publishTime>
+      <publishTime>07/16/2014 15:08:16</publishTime>
     </File>
     <File Include="css/battle.css">
       <publishTime>07/13/2014 15:26:19</publishTime>
     </File>
     <File Include="css/characters.css">
-      <publishTime>06/07/2014 17:35:04</publishTime>
+      <publishTime>07/06/2014 17:35:04</publishTime>
     </File>
     <File Include="css/duel.css">
-      <publishTime>07/13/2014 15:08:29</publishTime>
+      <publishTime>07/16/2014 13:33:37</publishTime>
     </File>
     <File Include="css/listing.css">
       <publishTime>07/13/2014 16:49:45</publishTime>
@@ -231,52 +231,52 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/13/2014 15:10:48</publishTime>
     </File>
     <File Include="css/styles.css">
-      <publishTime>07/13/2014 15:21:15</publishTime>
+      <publishTime>07/16/2014 15:12:51</publishTime>
     </File>
     <File Include="css/styles_2.css">
       <publishTime>05/03/2014 10:29:44</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>07/13/2014 16:35:22</publishTime>
+      <publishTime>07/16/2014 15:21:20</publishTime>
     </File>
     <File Include="Duel.aspx">
-      <publishTime>07/13/2014 15:05:50</publishTime>
+      <publishTime>07/16/2014 13:34:45</publishTime>
     </File>
     <File Include="DuelResult.aspx">
-      <publishTime>07/13/2014 16:22:03</publishTime>
+      <publishTime>07/16/2014 13:34:14</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>03/29/2014 14:32:34</publishTime>
     </File>
     <File Include="images/Attack-Icon.png">
-      <publishTime>06/07/2014 17:39:28</publishTime>
+      <publishTime>07/06/2014 17:39:28</publishTime>
     </File>
     <File Include="images/characters/bd14569d-a03c-42fb-b42a-330fbd6339e0.jpg">
-      <publishTime>06/07/2014 17:40:02</publishTime>
+      <publishTime>07/06/2014 17:40:02</publishTime>
     </File>
     <File Include="images/characters/neutral/1304556701332.jpg">
-      <publishTime>06/07/2014 17:40:02</publishTime>
+      <publishTime>07/06/2014 17:40:02</publishTime>
     </File>
     <File Include="images/characters/neutral/cooltoad.jpg">
-      <publishTime>06/07/2014 17:40:02</publishTime>
+      <publishTime>07/06/2014 17:40:02</publishTime>
     </File>
     <File Include="images/characters/neutral/thatfeel.jpg">
-      <publishTime>06/07/2014 17:40:02</publishTime>
+      <publishTime>07/06/2014 17:40:02</publishTime>
     </File>
     <File Include="images/characters/neutral/tidusinsanemode.jpg">
-      <publishTime>06/07/2014 17:40:02</publishTime>
+      <publishTime>07/06/2014 17:40:02</publishTime>
     </File>
     <File Include="images/favicon_2.png">
-      <publishTime>03/05/2014 10:44:04</publishTime>
+      <publishTime>05/03/2014 10:44:04</publishTime>
     </File>
     <File Include="images/How-Monbattle-Works.gif">
-      <publishTime>12/04/2014 21:51:12</publishTime>
+      <publishTime>04/12/2014 21:51:12</publishTime>
     </File>
     <File Include="images/HP-Icon.png">
-      <publishTime>06/07/2014 17:39:28</publishTime>
+      <publishTime>07/06/2014 17:39:28</publishTime>
     </File>
     <File Include="images/Monbattle-Logo.png">
-      <publishTime>06/07/2014 17:39:28</publishTime>
+      <publishTime>07/06/2014 17:39:28</publishTime>
     </File>
     <File Include="images/monbattle_logo.png">
       <publishTime>03/29/2014 18:28:02</publishTime>
@@ -300,64 +300,64 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/27/2014 11:49:12</publishTime>
     </File>
     <File Include="images/Speed-Icon.png">
-      <publishTime>06/07/2014 17:39:28</publishTime>
+      <publishTime>07/06/2014 17:39:28</publishTime>
     </File>
     <File Include="images/Taskbar Background Color.jpg">
-      <publishTime>06/07/2014 17:39:28</publishTime>
+      <publishTime>07/06/2014 17:39:28</publishTime>
     </File>
     <File Include="images/taskbar-battle-icon.png">
-      <publishTime>06/07/2014 17:39:28</publishTime>
+      <publishTime>07/06/2014 17:39:28</publishTime>
     </File>
     <File Include="images/Taskbar-Points-Icon.png">
-      <publishTime>06/07/2014 17:39:28</publishTime>
+      <publishTime>07/06/2014 17:39:28</publishTime>
     </File>
     <File Include="images/taskbar-profile-icon.png">
-      <publishTime>06/07/2014 17:39:28</publishTime>
+      <publishTime>07/06/2014 17:39:28</publishTime>
     </File>
     <File Include="images/taskbar-sign-in-icon.png">
-      <publishTime>06/07/2014 17:39:28</publishTime>
+      <publishTime>07/06/2014 17:39:28</publishTime>
     </File>
     <File Include="images/taskbar-sign-out-icon.png">
-      <publishTime>06/07/2014 17:39:28</publishTime>
+      <publishTime>07/06/2014 17:39:28</publishTime>
     </File>
     <File Include="images/taskbar-sign-up-icon.png">
-      <publishTime>06/07/2014 17:39:28</publishTime>
+      <publishTime>07/06/2014 17:39:28</publishTime>
     </File>
     <File Include="images/taskbar-social-icon.png">
-      <publishTime>06/07/2014 17:39:28</publishTime>
+      <publishTime>07/06/2014 17:39:28</publishTime>
     </File>
     <File Include="images/vs.png">
-      <publishTime>03/04/2014 20:03:22</publishTime>
+      <publishTime>04/03/2014 20:03:22</publishTime>
     </File>
     <File Include="images/vs_2.png">
-      <publishTime>03/05/2014 10:15:20</publishTime>
+      <publishTime>05/03/2014 10:15:20</publishTime>
     </File>
     <File Include="Login.aspx">
-      <publishTime>07/11/2014 13:59:18</publishTime>
+      <publishTime>07/16/2014 15:19:29</publishTime>
     </File>
     <File Include="Logout.aspx">
-      <publishTime>12/04/2014 16:47:50</publishTime>
+      <publishTime>04/12/2014 16:47:50</publishTime>
     </File>
     <File Include="MonBattle.Master">
-      <publishTime>07/13/2014 16:27:36</publishTime>
+      <publishTime>07/16/2014 15:33:38</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>03/30/2014 09:20:18</publishTime>
     </File>
     <File Include="PastBattles.aspx">
-      <publishTime>12/04/2014 18:53:38</publishTime>
+      <publishTime>04/12/2014 18:53:38</publishTime>
     </File>
     <File Include="Register.aspx">
-      <publishTime>07/11/2014 13:27:38</publishTime>
+      <publishTime>07/16/2014 15:10:38</publishTime>
     </File>
     <File Include="Shop.aspx">
-      <publishTime>07/13/2014 15:22:59</publishTime>
+      <publishTime>07/16/2014 14:27:37</publishTime>
     </File>
     <File Include="ViewCharacter.aspx">
       <publishTime>07/07/2014 01:22:10</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/14/2014 00:36:25</publishTime>
+      <publishTime>07/16/2014 15:56:07</publishTime>
     </File>
   </ItemGroup>
 </Project>

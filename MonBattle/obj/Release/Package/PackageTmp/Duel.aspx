@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div id="versusLogoDiv">
-                <img id="versusLogo" src="images/vs.png" alt="Versus" />
+                <img id="versusLogo" class="duel" src="images/vs.png" alt="Versus" />
             </div>
             <div id="opponent" class="opp-item">
                 <p class="big"><%= opponent.Name %></p>

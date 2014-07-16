@@ -4,8 +4,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="text-mid">
-        <a href="http://www.getmonstercards.com">Site Updates</a>
-    </div>
+        <a href="http://www.getmonstercards.com">
+            Site News
+        </a>
+    </div><br>
 
     <asp:UpdatePanel runat="server" ID="updpnl_battle">
         <ContentTemplate>
@@ -17,11 +19,15 @@
                         <td colspan="3" style="text-align: center" runat="server" id="tblcell_login" visible="false">
                             <a class="hyperlink" href="Login.aspx">Login</a> or <a class="hyperlink" href="Register.aspx">register</a> to vote!
 
-                            <p style="text-align:center"><a class="hyperlink" href="About.aspx">What is Monbattle? Click to learn.</a></p>
+                            <h2 style="text-align:center">
+                                <a class="hyperlink" href="About.aspx">
+                                    How Monbattle Works. Click to learn.
+                                </a>
+                            </h2><br>
                         </td>
 
                         <td colspan="3" style="text-align:center">
-                            <asp:Label runat="server" ID="lbl_voteMessage" Text="Click on the card to vote!" Font-Size="14px" style="display:block; margin-bottom: 5px"></asp:Label>
+                            <asp:Label runat="server" ID="lbl_voteMessage" Text="Vote for the most popular card each day and receive 1MP!" Font-Size="14px" style="display:block; margin-bottom: 5px"></asp:Label>
                         </td>
                     </tr>
 

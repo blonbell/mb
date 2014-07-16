@@ -7,7 +7,11 @@
 
         <asp:Panel runat="server" ID="pnl_login" DefaultButton="btn_login">
 
-            <p style="text-align:center"><a class="hyperlink" href="About.aspx">What is Monbattle? Click to learn.</a></p>
+            <h2 style="text-align:center">
+                <a class="hyperlink" href="About.aspx">
+                    How Monbattle Works. Click to learn.
+                </a>
+            </h2><br>
 
             <div class="div-login-title">
                 Login to MonBattle!

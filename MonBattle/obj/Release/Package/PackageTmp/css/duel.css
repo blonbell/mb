@@ -32,9 +32,14 @@ p.big {
     overflow: hidden;
 }
 
-#versusLogo {
+.duel#versusLogo {
     position: relative;
     top: 29%;
+}
+
+.duelResult#versusLogo {
+    position: relative;
+    top: 49%;
 }
 
 .atkBoost {

@@ -14,7 +14,7 @@
         <div class="form-group text-info">
             <asp:Label ID="lblImage"  runat="server" Text="Image"/>
             <asp:FileUpload ID="imgUpload" runat="server" ViewStateMode="Enabled" />
-            <p class="help-block">The image should be 445px by 575px</p> 
+            <p class="help-block">The image will be resized to 445px by 575px and can not be bigger than 750kb</p> 
             <asp:Label ID="lblHelp" CssClass="help-block" runat="server" Text=""></asp:Label>
         </div>
         <div class="form-group text-info">

@@ -8,7 +8,8 @@
     <h2>
         Refresh all battle counters
     </h2>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="UserCharacterSource">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+        DataSourceID="UserCharacterSource" ShowFooter="True" OnRowDataBound="GridView1_RowDataBound" AllowSorting="True">
             <Columns>
                 <asp:BoundField DataField="Username" HeaderText="Username" SortExpression="Username" />
                 <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />

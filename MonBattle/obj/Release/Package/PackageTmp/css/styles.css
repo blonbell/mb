@@ -238,7 +238,7 @@ html {
     }
 
 .register-textbox {
-
+    margin-top:20px;
     border: 2px solid #4e6565;
     border-radius: 4px;
     padding: 1px 2px;
@@ -567,15 +567,22 @@ html {
     width: 445px;
 }
 
+.smallprint {
+    height: 287.5px;
+    width: 222.5px;
+}
+
+.xsprint {
+    height: 216px;
+    width: 166.5px;
+}
+
 .thumbnail {
     height: 144px;
     width: 111px;
 }
 
-.smallprint {
-    height: 287.5px;
-    width: 222.5px;
-}
+
 
 .icon {
     width: 70px;

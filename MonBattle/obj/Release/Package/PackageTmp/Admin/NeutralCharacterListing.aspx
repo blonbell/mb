@@ -6,18 +6,22 @@
 
 <asp:Content ID="bodyContent" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:GridView ID="CharListings" runat="server" 
-        AutoGenerateColumns="False" DataSourceID="NeutralCharSource" AllowSorting="True" >
+        AutoGenerateColumns="False" DataSourceID="NeutralCharSource" AllowSorting="True" DataKeyNames="CharID">
         <Columns>
-            <asp:ImageField DataImageUrlField="ImageUrl" HeaderText="Image">
-            </asp:ImageField>
+            <asp:CommandField ShowDeleteButton="True" />
             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+            <asp:BoundField DataField="ImageUrl" HeaderText="ImageUrl" SortExpression="ImageUrl" />
             <asp:BoundField DataField="Attack" HeaderText="Attack" SortExpression="Attack" />
             <asp:BoundField DataField="Health" HeaderText="Health" SortExpression="Health" />
             <asp:BoundField DataField="Speed" HeaderText="Speed" SortExpression="Speed" />
-            <asp:BoundField DataField="Rewards" HeaderText="Rewards" SortExpression="Rewards" />
+            <asp:BoundField DataField="rewards" HeaderText="rewards" SortExpression="rewards" />
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="NeutralCharSource" runat="server" ConnectionString="<%$ ConnectionStrings:MonBattleConnectionString %>" 
-        SelectCommand="SELECT * FROM [monbattle].[NeutralCharacters]"></asp:SqlDataSource>
+        SelectCommand="SELECT * FROM [monbattle].[NeutralCharacters]" DeleteCommand="DELETE FROM monbattle.NeutralCharacters WHERE (CharID = @CharID)">
+        <DeleteParameters>
+            <asp:Parameter Name="CharID" />
+        </DeleteParameters>
+    </asp:SqlDataSource>
 </asp:Content>
 

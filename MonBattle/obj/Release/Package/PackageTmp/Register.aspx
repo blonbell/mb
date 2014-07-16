@@ -52,7 +52,7 @@
 
                 <tr>
                     <td>
-                        Confirm:
+                        Confirm Password:
                     </td>
 
                     <td>
@@ -115,7 +115,7 @@
     
     <asp:Panel CssClass="panel-popup popup-registration" runat="server" ID="pnl_popupRegister" DefaultButton="btn_popupClose">
         <div runat="server">
-            <asp:Label runat="server" ID="lbl_successfulRegister" Text="You have successfully registered! You may now login to participate in the voting!" style="text-wrap:normal" Width="350px"></asp:Label>
+            <asp:Label runat="server" ID="lbl_successfulRegister" Text="Welcome to Monbattle! Please log in again. You have received 15MP (monbattle points)!" style="text-wrap:normal" Width="350px"></asp:Label>
             <br />
             <asp:Button runat="server" ID="btn_popupClose" Text="OK" OnClientClick="window.location='Login.aspx';" />
         </div>
