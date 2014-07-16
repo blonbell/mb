@@ -1,0 +1,539 @@
+﻿* {
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+
+}
+
+html {
+    height: 100%;
+}
+
+.required-field {
+
+    color: #ffa0a0;
+    font-size: 20px;
+    font-family: Consolas;
+    vertical-align: middle;
+}
+
+.hyperlink {
+
+    color: #332D3B;
+}
+
+/* Master Page */
+
+.master-body {
+    width: 100%;
+    background-color: #84DEFF;
+    padding: 0;
+    margin: 0;
+
+    background: -webkit-linear-gradient(#84DEFF, #FFFFFF); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#84DEFF, #FFFFFF); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#84DEFF, #FFFFFF); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#84DEFF, #FFFFFF); /* Standard syntax */
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.master-main, .master-footer {
+
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border: 3px solid #332D3B;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+}
+
+.master-footer {
+    font-size: 12px;
+    text-align: right;
+    padding: 2px 10px;
+}
+
+    .master-footer a, .master-footer a:visited {
+        /*text-decoration: none;*/
+        color: #332D3B;
+    }
+
+.master-header {
+
+    width: 100%;
+    background-color: #2E5991;
+    color: #FFFFFF;
+    padding: 3px 5px;
+    border-bottom: 2px solid #332D3B;
+}
+
+.master-header-table {
+
+    width: 100%;
+
+}
+
+.master-header-title {
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.logo-background {
+
+
+}
+
+.master-header-hyperlink {
+
+    color: #d9f2f3;
+    /*border: 1px solid black;*/
+    /*top: 20px;*/
+    font-weight: 700;
+    /*text-decoration: none;*/
+    margin-left: 15px;
+}
+
+.master-header-button {
+
+    padding: 4px;
+    border: 2px solid #332D3B;
+    background-color: #EEEEEE;
+    border-radius: 8px;
+    margin-right: 4px;
+    font-size: 14px;
+    color: #222222;
+}
+
+    .master-header-button:hover {
+        cursor: pointer;
+    }
+
+.master-content {
+
+    padding: 20px;
+}
+
+/* End master page */
+
+/* Login Page */
+.div-login {
+
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 13px;
+    color: #FFFFFF;
+}
+
+.div-login-title, .div-login table {
+
+    width: 100%;
+    border: 2px solid #332D3B;
+    background-color: #2E5991;
+    border-radius: 6px;
+}
+
+.div-login-title {
+
+    padding: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+}
+
+    .div-login table {
+
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    .div-login table td {
+        padding: 4px;
+    }
+
+.login-textbox {
+
+    border: 2px solid #332D3B;
+    border-radius: 4px;
+    padding: 1px 2px;
+    color: #334646;
+}
+
+.login-button {
+
+    padding: 2px 6px;
+    border: 2px solid #332D3B;
+    background-color: #EEEEEE;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #222222;
+}
+
+    .login-button:hover {
+
+        cursor: pointer;
+    }
+
+/* End Login Page */
+
+/* Register Page */
+
+.div-register {
+
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 13px;
+    color: #FFFFFF;
+}
+
+.div-register-title, .div-register table {
+
+    width: 100%;
+    border: 2px solid #332D3B;
+    background-color: #2E5991;
+    border-radius: 6px;
+}
+
+.div-register-title {
+
+    padding: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+}
+
+    .div-register table {
+
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    .div-register table td {
+        padding: 4px;
+    }
+
+.register-textbox {
+
+    border: 2px solid #332D3B;
+    border-radius: 4px;
+    padding: 1px 2px;
+    color: #334646;
+}
+
+.register-button {
+
+    padding: 2px 6px;
+    border: 2px solid #332D3B;
+    background-color: #EEEEEE;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #222222;
+}
+
+    .register-button:hover {
+
+        cursor: pointer;
+    }
+
+.password-confirm-validator {
+
+    color: #ffa0a0;
+    font-size: 11px;
+    vertical-align: middle;
+}
+
+.modal-popup-background {
+    height: 100%;
+    background-color: #222222;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+
+/* End Register Page */
+
+/* Admin master page */
+
+.master-header-admin {
+
+    width: 100%;
+    background-color: #2E5991;
+    color: #FFFFFF;
+    padding: 3px 5px;
+    border-bottom: 2px solid #332D3B;
+}
+
+.master-header-table-admin {
+    width: 100%;
+}
+
+.master-header-table-admin td {
+
+}
+
+.menu-admin {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    color: #FFFFFF;
+    display: inline-table;
+}
+
+    .menu-admin td {
+        
+        color: #FFFFFF;
+        background-color: #2E5991;
+        font-size: 16px;
+        text-align: left;
+    }
+
+        .menu-admin td a {
+            color: #FFFFFF;
+            font-size: 16px;
+            padding: 3px 8px;
+        }
+
+        .menu-admin td a:hover {
+            background-color: #2E5991;
+            padding: 3px 8px;
+        }
+
+.sub-menu-admin {
+    font-size: 14px;
+}
+
+/* End Admin master page */
+
+/* Card Page */
+
+.save-card-button {
+
+    padding: 2px 6px;
+    border: 2px solid #332D3B;
+    background-color: #EEEEEE;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #222222;
+}
+
+
+.card-table {
+    font-size: 13px;
+}
+
+    .card-table input {
+        font-size: 13px;
+    }
+/* End Card Page */
+
+/* Card Page */
+.div-cards {
+}
+
+.grid-cards {
+
+    border: 2px solid #332D3B;
+    color: #FFFFFF;
+    font-size: 13px;
+    background-color: #2E5991;
+}
+
+    .grid-cards th {
+        background-color: #332D3B;
+        font-weight: 500;
+        /*border: 1px solid #FFFFFF;*/
+    }
+
+    .grid-cards td {
+
+        padding: 1px 4px;
+        /*border: 1px solid #FFFFFF;*/
+    }
+
+    .grid-cards a, .grid-cards a:visited {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+        .grid-cards a:hover {
+            color: #68C5FF;
+        }
+
+/* End Cards Page */
+
+/* Battle Page */
+
+.div-battle {
+    color: #332D3B;
+}
+
+.save-battle-button {
+
+    padding: 2px 6px;
+    border: 2px solid #332D3B;
+    background-color: #EEEEEE;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #222222;
+}
+
+    .save-battle-button:hover {
+        cursor: pointer;
+    }
+
+/* End Battle Page */
+
+/* Battles Page */
+
+.div-battles {
+}
+
+.grid-battles {
+
+    border: 2px solid #332D3B;
+    color: #FFFFFF;
+    font-size: 13px;
+    background-color: #2E5991;
+}
+
+    .grid-battles th {
+        background-color: #332D3B;
+        font-weight: 500;
+        border: 1px solid #FFFFFF;
+    }
+
+    .grid-battles td {
+
+        padding: 1px 4px;
+        border: 1px solid #FFFFFF;
+    }
+
+    .grid-battles-link, .grid-battles-link:visited {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+    
+        .grid-battles a:hover {
+            color: #bfd8d9;
+        }
+
+.grid-battles-winner, .grid-battles-winner:visited {
+    text-shadow: 2px 2px 2px #333333;
+    color: #fff289;
+    text-decoration: none;
+}
+
+/* End Battles Page */
+
+
+/* Panel Popups */
+
+.panel-popup {
+
+    border: 2px solid #332D3B;
+    background-color: #2E5991;
+    font-size: 13px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+    .panel-popup input {
+    
+        margin-top: 10px;
+        border: 1px solid #332D3B;
+        color: #222222;
+        background-color: #EEEEEE;
+        border-radius: 6px;
+    }
+
+        .panel-popup input:hover {
+
+            cursor: pointer;
+        }
+
+.popup-registration {
+    width: 400px;
+}
+
+.popup-vote {
+    width: 400px;
+}
+
+.popup-battle-winner {
+    width: 400px;
+}
+
+/* End Panel popups */
+
+/* Users Page */
+.div-users {
+}
+
+.grid-users {
+
+    border: 2px solid #332D3B;
+    color: #FFFFFF;
+    font-size: 13px;
+    background-color: #2E5991;
+}
+
+    .grid-users th {
+        background-color: #332D3B;
+        font-weight: 500;
+        border: 1px solid #FFFFFF;
+    }
+
+    .grid-users td {
+
+        padding: 1px 4px;
+        border: 1px solid #FFFFFF;
+    }
+
+    .grid-users a, .grid-users a:visited {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+        .grid-users a:hover {
+            color: #bfd8d9;
+        }
+
+/* End Users Page */
+
+/* Shop Page */
+
+.div-shop {
+
+    color: #332D3B;
+}
+
+/* End Shop Page */
+
+/* Past Battles */
+
+.past-battles {
+
+    font-size: 13px;
+}
+
+    .past-battles td {
+        padding: 4px 5px;
+    }
+
+/* End Past Battles */
+

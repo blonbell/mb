@@ -1,0 +1,54 @@
+﻿div.frame-border {
+    padding: 10px;
+    border: 3px dashed #0094ff;
+    border-radius: 3px;
+    width: 29%;
+    margin: 5px;
+    overflow:hidden;
+}
+
+#trainingPanel-left {
+    width: 40% !important;
+}
+
+#trainingPanel-right {
+    width: 50% !important;
+    vertical-align: top;
+    text-align: justify;
+}
+
+#trainingPanel-right > div {
+    margin: 20px;
+}
+
+.width-90 {
+    width: 90% !important;
+}
+
+div.frame-border:hover {
+    background-color: rgb(229, 189, 189);
+}
+
+.wrapFrames {
+    text-align: center;
+    overflow:hidden;
+}
+
+.desc-image {
+    margin-top: 20px;
+}
+
+.desc-left {
+    float: left;
+}
+
+.desc-right {
+    float: right;
+}
+
+.char-table-panel {
+    display: inline-block; 
+    overflow:hidden;
+    margin: 5px;
+}
+

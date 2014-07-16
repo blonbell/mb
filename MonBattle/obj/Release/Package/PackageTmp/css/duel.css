@@ -1,0 +1,42 @@
+﻿body {
+}
+
+div.row {
+    text-align: center;
+}
+
+.opp-item {
+    margin: 10px; 
+    display: inline-block; 
+    overflow: hidden;
+}
+
+.stat-bar {
+    padding: 15px;
+}
+
+#atkBoostSlider {
+    border-color: #F93c3c;
+    box-shadow: rgb(192, 29, 29) 0 0 8px;
+    outline: 0 none;
+}
+
+p.big {
+    font-size: 1.2em;
+    margin: 10px;
+}
+
+#versusLogoDiv {
+    height: 260px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+#versusLogo {
+    position: relative;
+    top: 29%;
+}
+
+.atkBoost {
+    font-weight: bold;
+}

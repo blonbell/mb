@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MonBattle.master.cs" Inherits="MonBattle.MonBattle1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>MonBattle!</title>
+
+    <link rel="icon" type="image/png" href="images/favicon_2.png" />
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })
+
+        (window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-30110816-2', 'monbattle.com');
+        ga('send', 'pageview');
+
+    </script>
+</head>
+
+<body class="master-body">
+    <form id="form1" runat="server">
+
+    <asp:Panel ID="errorPanel" CssClass="fixed-top-warning-panel text-mid" runat="server">
+        <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
+    </asp:Panel>  
+    <script>
+        $("#errorPanel").click(function () {
+            $(this).slideUp();
+        });
+    </script>    
+
+    <ajaxToolkit:ToolkitScriptManager runat="server" ID="scriptManager"></ajaxToolkit:ToolkitScriptManager>
+
+    <div class="banner" id="div_banner" runat="server" visible="false">
+        <asp:ImageButton runat="server" ID="img_banner" Width="600px" Height="100px" Visible="false" />
+    </div>
+
+    <div class="master-main">
+
+        <div class="master-header">
+            <div class="master-header-logo">
+                <asp:ImageButton ID="imgbtn_logo" ImageUrl="~/images/Monbattle-Logo.png"
+                        runat="server" PostBackUrl="~/Default.aspx" Width="150px" />
+                <% if (user != null) { %>
+                    <div>Welcome, <%= user.username %></div>
+                    <div>MP: <%= user.points %></div>
+                <% } %>
+            </div>
+            <div class="master-navbar">
+                <asp:Menu ID="navbar_in" runat="server" RenderingMode="List"
+                    Orientation="Horizontal" StaticEnableDefaultPopOutImage="False" StaticSubMenuIndent="10px">
+                    <StaticMenuItemStyle HorizontalPadding="15px" VerticalPadding="0px" />
+                    <DynamicMenuItemStyle HorizontalPadding="15px" VerticalPadding="3px" BackColor="#6b8a8b" 
+                        ForeColor="#FFFFFF" Font-Size="12px" />
+                    <DynamicHoverStyle BackColor="#5c9b9d" />
+                    <Items>
+                        <asp:MenuItem ImageUrl="~/images/taskbar-profile-icon.png" Selectable="false">
+                            <asp:MenuItem Text="Create A Character" NavigateUrl="~/CreateAChar.aspx" />
+                            <asp:MenuItem Text="View Character" NavigateUrl="~/ViewCharacter.aspx" />
+                        </asp:MenuItem>
+                        <asp:MenuItem ImageUrl="~/images/taskbar-battle-icon.png" NavigateUrl="~/Battle.aspx" Selectable="false">
+                            <asp:MenuItem Text="Battle" NavigateUrl="~/Battle.aspx" />
+                            <asp:MenuItem Text="Training Shop" NavigateUrl="~/Shop.aspx" />
+                            <asp:MenuItem Text="Arena - Soon" Selectable="false" />
+                        </asp:MenuItem>
+                        <asp:MenuItem ImageUrl="~/images/taskbar-social-icon.png" Selectable="false">
+                            <asp:MenuItem Text="Vote" NavigateUrl="~/Default.aspx" />
+                            <asp:MenuItem Text="Past Battle" NavigateUrl="~/PassBattles.aspx" />
+                            <asp:MenuItem Text="Guilds - Soon" Selectable="false" />
+                            <asp:MenuItem Text="Trade - Soon" Selectable="false" />
+                            <asp:MenuItem Text="Leaderboard - Soon" Selectable="false" />
+                        </asp:MenuItem>
+                        <asp:MenuItem ImageUrl="~/images/taskbar-sign-out-icon.png" NavigateUrl="~/Logout.aspx" Selectable="true" />
+                    </Items>
+                </asp:Menu>
+                <asp:Menu runat="server" ID="navbar_out" RenderingMode="List"
+                    Orientation="Horizontal" StaticEnableDefaultPopOutImage="False" StaticSubMenuIndent="10px">
+                    <StaticMenuItemStyle HorizontalPadding="15px" VerticalPadding="0px" />
+                    <DynamicMenuItemStyle HorizontalPadding="15px" VerticalPadding="3px" BackColor="#6b8a8b" 
+                        ForeColor="#FFFFFF" Font-Size="12px" />
+                    <DynamicHoverStyle BackColor="#5c9b9d" />
+                    <Items>
+                        <asp:MenuItem ImageUrl="~/images/taskbar-sign-up-icon.png" NavigateUrl="~/Register.aspx" Selectable="true" />
+                        <asp:MenuItem ImageUrl="~/images/taskbar-sign-in-icon.png" NavigateUrl="~/Login.aspx" Selectable="true" />
+                    </Items>
+                </asp:Menu>
+            </div>
+            <div id="clearFloat" class="clear-float"></div>
+        </div>
+
+        <div class="master-content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+
+    <div class="master-footer" runat="server" id="div_admin" visible="false">
+        <asp:HyperLink runat="server" ID="hyplnk_adminSite" Text="Administration" NavigateUrl="~/Admin/Default.aspx"></asp:HyperLink>
+    </div>
+            
+
+    </form>
+</body>
+</html>

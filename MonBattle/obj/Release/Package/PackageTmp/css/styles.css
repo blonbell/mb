@@ -1,0 +1,675 @@
+﻿* {
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+
+}
+
+html {
+    height: 100%;
+}
+
+.required-field {
+
+    color: #ffa0a0;
+    font-size: 20px;
+    font-family: Consolas;
+    vertical-align: middle;
+}
+
+.hyperlink {
+
+    color: #4e6565;
+}
+
+/* Master Page */
+
+.master-body {
+    width: 100%;
+    background-color: #c5e9eb;
+    padding: 0;
+    margin: 0;
+
+    background: -webkit-linear-gradient(#c5e9eb, #FFFFFF); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#c5e9eb, #FFFFFF); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#c5e9eb, #FFFFFF); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#c5e9eb, #FFFFFF); /* Standard syntax */
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.banner {
+
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border: none;
+    margin-bottom: 10px;
+    /*height: 100px;*/
+}
+
+.master-main, .master-footer {
+
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border: 3px solid #4e6565;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 10px;
+}
+
+.master-footer {
+    font-size: 12px;
+    text-align: right;
+    padding: 2px 10px;
+}
+
+    .master-footer a, .master-footer a:visited {
+        /*text-decoration: none;*/
+        color: #4e6565;
+    }
+
+/*.master-header {
+
+    width: 100%;
+    background-color: #6b8a8b;
+    background-color: #FFFFFF;
+    color: #FFFFFF;
+    padding: 3px 5px;
+    border-bottom: 2px solid #4e6565;
+}*/
+
+.master-header-table {
+
+    width: 100%;
+
+}
+
+.master-header-title {
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.logo-background {
+
+
+}
+
+.master-header-hyperlink {
+
+    color: #d9f2f3;
+    /*border: 1px solid black;*/
+    /*top: 20px;*/
+    font-weight: 700;
+    /*text-decoration: none;*/
+    margin-left: 15px;
+}
+
+.master-header-button {
+
+    padding: 4px;
+    border: 2px solid #4e6565;
+    background-color: #EEEEEE;
+    border-radius: 8px;
+    margin-right: 4px;
+    font-size: 14px;
+    color: #222222;
+}
+
+    .master-header-button:hover {
+        cursor: pointer;
+    }
+
+.master-content {
+
+    padding: 20px;
+}
+
+/* End master page */
+
+/* Login Page */
+.div-login {
+
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 13px;
+    color: #FFFFFF;
+}
+
+.div-login-title, .div-login table {
+
+    width: 100%;
+    border: 2px solid #4e6565;
+    background-color: #6b8a8b;
+    border-radius: 6px;
+}
+
+.div-login-title {
+
+    padding: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+}
+
+    .div-login table {
+
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    .div-login table td {
+        padding: 4px;
+    }
+
+.login-textbox {
+
+    border: 2px solid #4e6565;
+    border-radius: 4px;
+    padding: 1px 2px;
+    color: #334646;
+}
+
+.login-button {
+
+    padding: 2px 6px;
+    border: 2px solid #4e6565;
+    background-color: #EEEEEE;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #222222;
+}
+
+    .login-button:hover {
+
+        cursor: pointer;
+    }
+
+/* End Login Page */
+
+/* Register Page */
+
+.div-register {
+
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 13px;
+    color: #FFFFFF;
+}
+
+.div-register-title, .div-register table {
+
+    width: 100%;
+    border: 2px solid #4e6565;
+    background-color: #6b8a8b;
+    border-radius: 6px;
+}
+
+.div-register-title {
+
+    padding: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+}
+
+    .div-register table {
+
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    .div-register table td {
+        padding: 4px;
+    }
+
+.register-textbox {
+
+    border: 2px solid #4e6565;
+    border-radius: 4px;
+    padding: 1px 2px;
+    color: #334646;
+}
+
+.register-button {
+
+    padding: 2px 6px;
+    border: 2px solid #4e6565;
+    background-color: #EEEEEE;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #222222;
+}
+
+    .register-button:hover {
+
+        cursor: pointer;
+    }
+
+.password-confirm-validator {
+
+    color: #ffa0a0;
+    font-size: 11px;
+    vertical-align: middle;
+}
+
+.modal-popup-background {
+    height: 100%;
+    background-color: #222222;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+
+/* End Register Page */
+
+/* Admin master page */
+
+.master-header-admin {
+
+    width: 100%;
+    background-color: #6b8a8b;
+    color: #FFFFFF;
+    padding: 3px 5px;
+    border-bottom: 2px solid #4e6565;
+}
+
+.master-header-table-admin {
+    width: 100%;
+}
+
+.master-header-table-admin td {
+
+}
+
+.menu-admin {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    color: #FFFFFF;
+    display: inline-table;
+}
+
+    .menu-admin td {
+        
+        color: #FFFFFF;
+        background-color: #6b8a8b;
+        font-size: 16px;
+        text-align: left;
+    }
+
+        .menu-admin td a {
+            color: #FFFFFF;
+            font-size: 16px;
+            padding: 3px 8px;
+        }
+
+        .menu-admin td a:hover {
+            background-color: #5c9b9d;
+            padding: 3px 8px;
+        }
+
+.sub-menu-admin {
+    font-size: 14px;
+}
+
+/* End Admin master page */
+
+/* Card Page */
+
+.save-card-button {
+
+    padding: 2px 6px;
+    border: 2px solid #4e6565;
+    background-color: #EEEEEE;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #222222;
+}
+
+
+.card-table {
+    font-size: 13px;
+}
+
+    .card-table input {
+        font-size: 13px;
+    }
+/* End Card Page */
+
+/* Card Page */
+.div-cards {
+}
+
+.grid-cards {
+
+    border: 2px solid #4e6565;
+    color: #FFFFFF;
+    font-size: 13px;
+    background-color: #6b8a8b;
+}
+
+    .grid-cards th {
+        background-color: #4e6565;
+        font-weight: 500;
+        border: 1px solid #FFFFFF;
+    }
+
+    .grid-cards td {
+
+        padding: 1px 4px;
+        border: 1px solid #FFFFFF;
+    }
+
+    .grid-cards a, .grid-cards a:visited {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+        .grid-cards a:hover {
+            color: #bfd8d9;
+        }
+
+/* End Cards Page */
+
+/* Battle Page */
+
+.div-battle {
+    color: #4e6565;
+}
+
+.save-battle-button {
+
+    padding: 2px 6px;
+    border: 2px solid #4e6565;
+    background-color: #EEEEEE;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #222222;
+}
+
+    .save-battle-button:hover {
+        cursor: pointer;
+    }
+
+/* End Battle Page */
+
+/* Battles Page */
+
+.div-battles {
+}
+
+.grid-battles {
+
+    border: 2px solid #4e6565;
+    color: #FFFFFF;
+    font-size: 13px;
+    background-color: #6b8a8b;
+}
+
+    .grid-battles th {
+        background-color: #4e6565;
+        font-weight: 500;
+        border: 1px solid #FFFFFF;
+    }
+
+    .grid-battles td {
+
+        padding: 1px 4px;
+        border: 1px solid #FFFFFF;
+    }
+
+    .grid-battles-link, .grid-battles-link:visited {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+    
+        .grid-battles a:hover {
+            color: #bfd8d9;
+        }
+
+.grid-battles-winner, .grid-battles-winner:visited {
+    text-shadow: 2px 2px 2px #333333;
+    color: #fff289;
+    text-decoration: none;
+}
+
+/* End Battles Page */
+
+
+/* Panel Popups */
+
+.panel-popup {
+
+    border: 2px solid #4e6565;
+    background-color: #6b8a8b;
+    font-size: 13px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+    .panel-popup input {
+    
+        margin-top: 10px;
+        border: 1px solid #4e6565;
+        color: #222222;
+        background-color: #EEEEEE;
+        border-radius: 6px;
+    }
+
+        .panel-popup input:hover {
+
+            cursor: pointer;
+        }
+
+.popup-registration {
+    width: 400px;
+}
+
+.popup-vote {
+    width: 400px;
+}
+
+.popup-battle-winner {
+    width: 400px;
+}
+
+/* End Panel popups */
+
+/* Users Page */
+.div-users {
+}
+
+.grid-users {
+
+    border: 2px solid #4e6565;
+    color: #FFFFFF;
+    font-size: 13px;
+    background-color: #6b8a8b;
+}
+
+    .grid-users th {
+        background-color: #4e6565;
+        font-weight: 500;
+        border: 1px solid #FFFFFF;
+    }
+
+    .grid-users td {
+
+        padding: 1px 4px;
+        border: 1px solid #FFFFFF;
+    }
+
+    .grid-users a, .grid-users a:visited {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+        .grid-users a:hover {
+            color: #bfd8d9;
+        }
+
+/* End Users Page */
+
+/* Shop Page */
+
+.div-shop {
+
+    color: #4e6565;
+}
+
+/* End Shop Page */
+
+/* Past Battles */
+
+.past-battles {
+
+    font-size: 13px;
+}
+
+    .past-battles td {
+        padding: 4px 5px;
+    }
+
+/* End Past Battles */
+
+/* Banner Page  */
+
+.banner-table {
+
+    font-size: 13px;
+}
+
+/* End Banner Page */
+
+
+/*
+ * Image Sizes
+ */
+.fullsize {
+    height: 575px;
+    width: 445px;
+}
+
+.thumbnail {
+    height: 144px;
+    width: 111px;
+}
+
+.smallprint {
+    height: 287.5px;
+    width: 222.5px;
+}
+
+.icon {
+    width: 70px;
+}
+
+.small-icon {
+    height: 25px;
+    width: 25px;
+}
+
+.medium-icon {
+    height: 50px;
+    width: 50px;
+}
+
+.mid-large-icon {
+    width: 100px;
+    height: 100px;
+}
+
+.large-icon {
+    height: 140px;
+    width: 140px;
+}
+
+/*
+ * Paragraph Styling.
+ */
+.inline {
+    display: inline-block;
+}
+.master-content {
+    padding: 20px;
+}
+
+.text-mid {
+    text-align: center;
+}
+
+.mid-align {
+    vertical-align: middle;
+}
+
+.clear-float {
+    margin-left: 5px;
+    margin-right: 5px;
+    clear:both;
+}
+.pad-left-5 {
+    padding-left: 5px;
+}
+
+/*
+ * Navigation Menu
+ */
+.master-header {
+    /*background-color: #6B8A8B;*/
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #4E6565;
+    color: #000000;
+    padding: 3px 5px;
+    width: 100%;
+}
+.master-header-table {
+    width: 100%;
+}
+.master-header-title {
+    font-size: 20px;
+    font-weight: 700;
+}
+.master-header-hyperlink {
+    color: #D9F2F3;
+    font-weight: 700;
+    margin-left: 15px;
+}
+
+.master-header-logo {
+    float: left;
+}
+
+
+.master-navbar {
+    float: right;
+}
+
+/*
+ * Error Panel
+ */
+.fixed-top-warning-panel {
+    z-index: 50;
+    background-color: rgb(238, 209, 44);
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}

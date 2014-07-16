@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQ4E9K0qMpUa7Op8d/iL9gQAAAAACAAAAAAAQZgAAAAEAACAAAAATIgKQK9ZPxnt6HHpYOO6iaWPT6chJpaEVG/K0J0rfigAAAAAOgAAAAAIAACAAAAAMA8bYg7XoH5gGP40T4k5LZixpsxgDqIwckhhDmtYBZCAAAACBfn4KB/8Az6ZkEgxhy6oFIVEqfYZgSZZhb/cE8irjJEAAAAAJZqaZwRPvRrHcVA715dNJz1DPJVCdhUHUC4xgrqZpukPCiWx2Oo7eOiwAoEW+Xg00d6NpT9L1GNBMqQ5dBWIv</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="About.aspx">
+      <publishTime>12/04/2014 21:56:32</publishTime>
+    </File>
+    <File Include="Admin/AddNeutralMonster.aspx">
+      <publishTime>07/13/2014 15:55:27</publishTime>
+    </File>
+    <File Include="Admin/Admin.Master">
+      <publishTime>07/13/2014 15:53:32</publishTime>
+    </File>
+    <File Include="Admin/Banner.aspx">
+      <publishTime>05/25/2014 11:57:38</publishTime>
+    </File>
+    <File Include="Admin/Battle.aspx">
+      <publishTime>03/05/2014 10:33:48</publishTime>
+    </File>
+    <File Include="Admin/Battles.aspx">
+      <publishTime>10/04/2014 00:36:38</publishTime>
+    </File>
+    <File Include="Admin/Card.aspx">
+      <publishTime>03/29/2014 23:18:48</publishTime>
+    </File>
+    <File Include="Admin/Cards.aspx">
+      <publishTime>07/04/2014 23:20:42</publishTime>
+    </File>
+    <File Include="Admin/Default.aspx">
+      <publishTime>03/30/2014 17:44:52</publishTime>
+    </File>
+    <File Include="Admin/NeutralCharacterListing.aspx">
+      <publishTime>07/13/2014 16:57:51</publishTime>
+    </File>
+    <File Include="Admin/ResetBattleCounter.aspx">
+      <publishTime>07/13/2014 16:49:02</publishTime>
+    </File>
+    <File Include="Admin/User.aspx">
+      <publishTime>03/29/2014 12:41:26</publishTime>
+    </File>
+    <File Include="Admin/Users.aspx">
+      <publishTime>07/13/2014 17:03:52</publishTime>
+    </File>
+    <File Include="Battle.aspx">
+      <publishTime>07/13/2014 15:26:25</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/AjaxMin.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/ar/AjaxControlToolkit.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/cs/AjaxControlToolkit.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/de/AjaxControlToolkit.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.Data.Edm.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/de/Microsoft.Data.OData.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/de/System.Spatial.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/es/AjaxControlToolkit.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.Data.Edm.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.Data.OData.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/es/System.Spatial.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/fr/AjaxControlToolkit.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.Data.Edm.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/fr/Microsoft.Data.OData.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/fr/System.Spatial.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/he/AjaxControlToolkit.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/hi/AjaxControlToolkit.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/HtmlAgilityPack.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/it/AjaxControlToolkit.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.Data.Edm.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/it/Microsoft.Data.OData.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/it/System.Spatial.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/ja/AjaxControlToolkit.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.Data.Edm.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/ja/Microsoft.Data.OData.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/ja/System.Spatial.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/ko/AjaxControlToolkit.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.Data.Edm.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/ko/Microsoft.Data.OData.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/ko/System.Spatial.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.Edm.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Data.OData.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.WindowsAzure.Configuration.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.WindowsAzure.Storage.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/MonBattle.dll">
+      <publishTime>07/14/2014 00:36:21</publishTime>
+    </File>
+    <File Include="bin/nl/AjaxControlToolkit.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/pl/AjaxControlToolkit.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/pt/AjaxControlToolkit.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/ru/AjaxControlToolkit.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.Data.Edm.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/ru/Microsoft.Data.OData.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/ru/System.Spatial.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/System.Spatial.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/tr-TR/AjaxControlToolkit.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/zh-CHS/AjaxControlToolkit.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/zh-CHT/AjaxControlToolkit.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Data.Edm.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.Data.OData.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Spatial.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/Microsoft.Data.Edm.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/Microsoft.Data.OData.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="bin/zh-Hant/System.Spatial.resources.dll">
+      <publishTime>03/30/2014 09:20:14</publishTime>
+    </File>
+    <File Include="CreateAChar.aspx">
+      <publishTime>06/07/2014 18:13:10</publishTime>
+    </File>
+    <File Include="css/battle.css">
+      <publishTime>07/13/2014 15:26:19</publishTime>
+    </File>
+    <File Include="css/characters.css">
+      <publishTime>06/07/2014 17:35:04</publishTime>
+    </File>
+    <File Include="css/duel.css">
+      <publishTime>07/13/2014 15:08:29</publishTime>
+    </File>
+    <File Include="css/listing.css">
+      <publishTime>07/13/2014 16:49:45</publishTime>
+    </File>
+    <File Include="css/shop.css">
+      <publishTime>07/13/2014 15:10:48</publishTime>
+    </File>
+    <File Include="css/styles.css">
+      <publishTime>07/13/2014 15:21:15</publishTime>
+    </File>
+    <File Include="css/styles_2.css">
+      <publishTime>05/03/2014 10:29:44</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>07/13/2014 16:35:22</publishTime>
+    </File>
+    <File Include="Duel.aspx">
+      <publishTime>07/13/2014 15:05:50</publishTime>
+    </File>
+    <File Include="DuelResult.aspx">
+      <publishTime>07/13/2014 16:22:03</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>03/29/2014 14:32:34</publishTime>
+    </File>
+    <File Include="images/Attack-Icon.png">
+      <publishTime>06/07/2014 17:39:28</publishTime>
+    </File>
+    <File Include="images/characters/bd14569d-a03c-42fb-b42a-330fbd6339e0.jpg">
+      <publishTime>06/07/2014 17:40:02</publishTime>
+    </File>
+    <File Include="images/characters/neutral/1304556701332.jpg">
+      <publishTime>06/07/2014 17:40:02</publishTime>
+    </File>
+    <File Include="images/characters/neutral/cooltoad.jpg">
+      <publishTime>06/07/2014 17:40:02</publishTime>
+    </File>
+    <File Include="images/characters/neutral/thatfeel.jpg">
+      <publishTime>06/07/2014 17:40:02</publishTime>
+    </File>
+    <File Include="images/characters/neutral/tidusinsanemode.jpg">
+      <publishTime>06/07/2014 17:40:02</publishTime>
+    </File>
+    <File Include="images/favicon_2.png">
+      <publishTime>03/05/2014 10:44:04</publishTime>
+    </File>
+    <File Include="images/How-Monbattle-Works.gif">
+      <publishTime>12/04/2014 21:51:12</publishTime>
+    </File>
+    <File Include="images/HP-Icon.png">
+      <publishTime>06/07/2014 17:39:28</publishTime>
+    </File>
+    <File Include="images/Monbattle-Logo.png">
+      <publishTime>06/07/2014 17:39:28</publishTime>
+    </File>
+    <File Include="images/monbattle_logo.png">
+      <publishTime>03/29/2014 18:28:02</publishTime>
+    </File>
+    <File Include="images/monbattle_logo2.png">
+      <publishTime>03/29/2014 18:41:58</publishTime>
+    </File>
+    <File Include="images/monbattle_logo3.png">
+      <publishTime>03/29/2014 22:35:06</publishTime>
+    </File>
+    <File Include="images/monbattle_logo4.png">
+      <publishTime>03/29/2014 22:42:36</publishTime>
+    </File>
+    <File Include="images/monbattle_logo5.png">
+      <publishTime>04/27/2014 11:23:04</publishTime>
+    </File>
+    <File Include="images/monbattle_logo6.png">
+      <publishTime>04/27/2014 11:38:28</publishTime>
+    </File>
+    <File Include="images/monbattle_logo7.png">
+      <publishTime>04/27/2014 11:49:12</publishTime>
+    </File>
+    <File Include="images/Speed-Icon.png">
+      <publishTime>06/07/2014 17:39:28</publishTime>
+    </File>
+    <File Include="images/Taskbar Background Color.jpg">
+      <publishTime>06/07/2014 17:39:28</publishTime>
+    </File>
+    <File Include="images/taskbar-battle-icon.png">
+      <publishTime>06/07/2014 17:39:28</publishTime>
+    </File>
+    <File Include="images/Taskbar-Points-Icon.png">
+      <publishTime>06/07/2014 17:39:28</publishTime>
+    </File>
+    <File Include="images/taskbar-profile-icon.png">
+      <publishTime>06/07/2014 17:39:28</publishTime>
+    </File>
+    <File Include="images/taskbar-sign-in-icon.png">
+      <publishTime>06/07/2014 17:39:28</publishTime>
+    </File>
+    <File Include="images/taskbar-sign-out-icon.png">
+      <publishTime>06/07/2014 17:39:28</publishTime>
+    </File>
+    <File Include="images/taskbar-sign-up-icon.png">
+      <publishTime>06/07/2014 17:39:28</publishTime>
+    </File>
+    <File Include="images/taskbar-social-icon.png">
+      <publishTime>06/07/2014 17:39:28</publishTime>
+    </File>
+    <File Include="images/vs.png">
+      <publishTime>03/04/2014 20:03:22</publishTime>
+    </File>
+    <File Include="images/vs_2.png">
+      <publishTime>03/05/2014 10:15:20</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>07/11/2014 13:59:18</publishTime>
+    </File>
+    <File Include="Logout.aspx">
+      <publishTime>12/04/2014 16:47:50</publishTime>
+    </File>
+    <File Include="MonBattle.Master">
+      <publishTime>07/13/2014 16:27:36</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>03/30/2014 09:20:18</publishTime>
+    </File>
+    <File Include="PastBattles.aspx">
+      <publishTime>12/04/2014 18:53:38</publishTime>
+    </File>
+    <File Include="Register.aspx">
+      <publishTime>07/11/2014 13:27:38</publishTime>
+    </File>
+    <File Include="Shop.aspx">
+      <publishTime>07/13/2014 15:22:59</publishTime>
+    </File>
+    <File Include="ViewCharacter.aspx">
+      <publishTime>07/07/2014 01:22:10</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/14/2014 00:36:25</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

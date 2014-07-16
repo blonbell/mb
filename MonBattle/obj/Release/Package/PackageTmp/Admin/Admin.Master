@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="MonBattle.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>MonBattle! - Administration</title>
+
+    <link rel="icon" type="image/png" href="images/favicon_2.png" />
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href="../css/styles.css" rel="stylesheet" type="text/css" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="master-body">
+    <form id="form1" runat="server">
+
+    <ajaxToolkit:ToolkitScriptManager runat="server" ID="scriptManager"></ajaxToolkit:ToolkitScriptManager>
+
+    <div class="master-main">
+
+        <div class="master-header-admin">
+            <table class="master-header-table-admin">
+                <tr>
+                    <td class="logo-background" style="width: 30%">
+                        <asp:Image runat="server" ID="img_logo" ImageUrl="~/images/monbattle_logo4.png" />
+                    </td>
+
+                    <td style="padding-left:20px; vertical-align: middle">
+                        <asp:Menu CssClass="menu-admin" runat="server" ID="menu_admin" RenderingMode="Table" Orientation="Horizontal" StaticEnableDefaultPopOutImage="false" StaticSubMenuIndent="10px">
+                            <StaticMenuItemStyle HorizontalPadding="0px" VerticalPadding="0px" />
+                            <DynamicMenuItemStyle HorizontalPadding="10px" VerticalPadding="3px" BackColor="#6b8a8b" ForeColor="#FFFFFF" Font-Size="12px" CssClass="sub-menu-admin" />
+                            <DynamicHoverStyle BackColor="#5c9b9d" />
+
+                            <Items>
+                                <asp:MenuItem Text="Battles" Selectable="false">
+                                    <asp:MenuItem Text="View Battles" NavigateUrl="~/Admin/Battles.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Add Battle" NavigateUrl="~/Admin/Battle.aspx"></asp:MenuItem>
+                                </asp:MenuItem>
+
+                                <asp:MenuItem Text="Cards" Selectable="false">
+                                    <asp:MenuItem Text="View Cards" NavigateUrl="~/Admin/Cards.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Add Card" NavigateUrl="~/Admin/Card.aspx"></asp:MenuItem>
+                                </asp:MenuItem>
+
+                                <asp:MenuItem Text="Users" Selectable="false">
+                                    <asp:MenuItem Text="View Users" NavigateUrl="~/Admin/Users.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Add User" NavigateUrl="~/Admin/User.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Reset BCounters" NavigateUrl="~/Admin/ResetBattleCounter.aspx"></asp:MenuItem>
+                                </asp:MenuItem>
+
+                                <asp:MenuItem Text="Neutrals" Selectable="false">
+                                    <asp:MenuItem Text="View Neutral Monsters" NavigateUrl="~/Admin/NeutralCharacterListing.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Add Neutral Monsters" NavigateUrl="~/Admin/AddNeutralMonster.aspx"></asp:MenuItem>
+                                </asp:MenuItem>
+
+                                <asp:MenuItem Text="Other" Selectable="false">
+                                    <asp:MenuItem Text="Banner" NavigateUrl="~/Admin/Banner.aspx"></asp:MenuItem>
+                                </asp:MenuItem>
+                            </Items>
+
+                        </asp:Menu>
+                    </td>
+
+<%--                    <td style="text-align: right; width: 10%">
+                        <asp:Button CssClass="master-header-button" runat="server" ID="btn_back" Text="Back to User Site" PostBackUrl="~/Default.aspx" />
+                    </td>--%>
+                </tr>
+            </table>
+        </div>
+
+        <div class="master-content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </div>
+
+    <div class="master-footer">
+        <asp:HyperLink runat="server" ID="hyplnk_back" Text="User Site" NavigateUrl="~/Default.aspx"></asp:HyperLink>
+    </div>
+
+    </form>
+</body>
+</html>
