@@ -96,6 +96,15 @@ namespace MonBattle.Admin
                             lbl_cardTwoVotes.Text = cardBattle.cardTwoVotes.ToString() + " votes";
                             lbl_cardTwoVotes.Visible = true;
                         }
+
+                        Dictionary<string, List<CardVoterObject>> voterMap = dataController.
+                            getCardBattleVoters(cardBattleID);
+
+                        string listOne = prepareVoterList(cardBattle.cardOne.name, voterMap);
+                        ltrCardOneVoters.Text = "<ul>" + listOne + "</ul>";
+
+                        string listTwo = prepareVoterList(cardBattle.cardTwo.name, voterMap);
+                        ltrCardTwoVoters.Text = "<ul>" + listTwo + "</ul>";
                     }
                     else
                     {
@@ -109,6 +118,20 @@ namespace MonBattle.Admin
                     Response.Redirect("Battle.aspx");
                 }
             }
+        }
+
+        private string prepareVoterList(string name, Dictionary<string, List<CardVoterObject>> voterMap) {
+            List<CardVoterObject> voters = new List<CardVoterObject>();
+            try{
+                voters = voterMap[name];
+            } catch(KeyNotFoundException ex) {
+                return "<li>Error!, Cannot produce list</li>";
+            }
+            string list = "";
+            foreach (CardVoterObject voter in voters) {
+                list += "<li title='" + voter.email + "," + voter.username + "'>" + voter.username + "</li>";
+            }
+            return list;
         }
 
         private void loadNewBattle()

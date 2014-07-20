@@ -381,6 +381,10 @@ namespace MonBattle.Controllers
             return successfulUpdate;
         }
 
+        public Dictionary<string, List<CardVoterObject>> getCardBattleVoters(int cardBattleId) {
+            return dataModel.getCardBattleVoters(cardBattleId);
+        }
+
         /// <summary>
         /// Gets list of card battles
         /// </summary>

@@ -1,0 +1,5 @@
+packages/
+*.ico
+*.cache
+*.resources
+*.dll

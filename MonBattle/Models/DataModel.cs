@@ -931,6 +931,41 @@ namespace MonBattle.Models
             }
         }
 
+        public Dictionary<string, List<CardVoterObject>> getCardBattleVoters(int cardBattleId) {
+            openSQLConnection();
+            
+            using (SqlCommand cmd = new SqlCommand("monbattle.ViewVotes", this.sqlConnection)) {
+                Dictionary<string, List<CardVoterObject>> cardVotersMap = new Dictionary<string, List<CardVoterObject>>();
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@CardBattleID", SqlDbType.Int);
+                cmd.Parameters["@CardBattleID"].Value = cardBattleId;
+
+                try {
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        int userId = Convert.ToInt32(reader["userId"]);
+                        string email = Convert.ToString(reader["email"]);
+                        string username = Convert.ToString(reader["username"]);
+                        string name = Convert.ToString(reader["name"]);
+                        CardVoterObject voter = new CardVoterObject(userId, username, email);
+                        List<CardVoterObject> voters = null;
+                        try {
+                            voters = cardVotersMap[name];
+                        } catch(KeyNotFoundException ex) {
+                            voters = new List<CardVoterObject>();
+                            cardVotersMap.Add(name, voters);
+                        }
+                        voters.Add(voter);
+                    }
+                    return cardVotersMap;
+                } catch (SqlException e) {
+                    throw e;
+                }
+            }
+        }
+
         /// <summary>
         /// Gets the card battle for the specified id
         /// </summary>
