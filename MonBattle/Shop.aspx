@@ -65,7 +65,7 @@
                 <asp:ImageButton ID="btnAtk" CssClass="desc-image mid-large-icon" ImageUrl="~/images/Attack-Icon.png" 
                     runat="server" onclick ="btnAtk_Click" />
                 <p class="clear-float"><span class="desc-left">Effect</span><span class="desc-right">+<%= effect %>ATK</span></p>
-                <p class="clear-float"><span class="desc-left">Cost</span><span class="desc-right"><%= usage %>points</span></p>
+                <p class="clear-float"><span class="desc-left">Cost</span><span class="desc-right"><%= usage %>MP</span></p>
                 <p class="clear-float"><span class="desc-left">Time</span><span class="desc-right"><%= trainingHour %>hours</span></p>
             </div>
             <div class="frame-border inline">
@@ -73,7 +73,7 @@
                 <asp:ImageButton ID="btnHp" CssClass="desc-image mid-large-icon" ImageUrl="~/images/HP-Icon.png" 
                     runat="server" OnClick="btnHp_Click" />
                 <p class="clear-float"><span class="desc-left">Effect</span><span class="desc-right">+<%= effect %>HP</span></p>
-                <p class="clear-float"><span class="desc-left">Cost</span><span class="desc-right"><%= usage %>points</span></p>
+                <p class="clear-float"><span class="desc-left">Cost</span><span class="desc-right"><%= usage %>MP</span></p>
                 <p class="clear-float"><span class="desc-left">Time</span><span class="desc-right"><%= trainingHour %>hours</span></p>
             </div>
             <div class="frame-border inline">
@@ -94,9 +94,7 @@
                     <asp:Image ID="trainingImgIcon" CssClass="desc-image large-icon" runat="server" />
                     <p class="clear-float">
                         <span class="desc-left">Effect</span><span class="desc-right">
-                            +<%= effect %> <%= user.character.trainingType.ToString() %>
-                        </span>
-                    </p>
+                            +<%= effect %><%= user.character.trainingType.ToString() %></span></p>
                 </div>
                 <div id = "trainingPanel-right" class="inline">
                     <div>
