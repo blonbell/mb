@@ -14,3 +14,5 @@
         </asp:Panel>
     </asp:Panel>
 </asp:Content>
+
+<!-- Todo make duel page prototype -->
