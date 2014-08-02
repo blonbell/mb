@@ -1,5 +1,6 @@
 ﻿using MonBattle.Controllers;
 using MonBattle.Data;
+using MonBattle.Data.BattleMechanics;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -10,16 +11,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Duel : System.Web.UI.Page
-{
+public partial class Duel : System.Web.UI.Page {
 
     public UserObject user;
     public CharacterObject self, opponent;
+    private BattleSystem battleSystem;
 
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        if (Session["User"] == null)
-        {
+    protected void Page_Load(object sender, EventArgs e) {
+        if (Session["User"] == null) {
             Session["ErrorMessage"] = "You need to be logged in first";
             Response.Redirect("~/Login.aspx");
         }
@@ -30,91 +29,100 @@ public partial class Duel : System.Web.UI.Page
             Session["ErrorMessage"] = "You need to have a card character before battling.";
             Response.Redirect("~/CreateAChar.aspx");
         }
-        self = (CharacterObject)user.character;
 
-        if (Session["Opponent"] == null)
-        {
-            Response.Redirect("~/Default.aspx");
+        //make sure that battlesystem is only initialized once along with the characters.
+        if (Session["BattleSystem"] == null) {
+            createBattleSession();
+        } else {
+            battleSystem = (BattleSystem) Session["BattleSystem"];
         }
-        opponent = (CharacterObject)Session["Opponent"];
 
-        litAtk.Text = "<span>" + self.Attack + "</span>";
-        imgSelf.ImageUrl = self.ImageUrl;
-
-        litHp.Text = "<span>?/?</span>";
-        imgOther.ImageUrl = opponent.ImageUrl;
+        refreshLayout();
     }
 
-    protected void btnBack_Click(object sender, EventArgs e)
-    {
-        Session.Remove("Opponent");
-        Response.Redirect("~/Battle.aspx");
+    protected void btnDuel_Click(object sender, EventArgs e) {
+        battleSystem.processInput(Convert.ToInt32(TextBox1.Text));
+        processTurn();
+    }
+    
+    protected void btnAtk_Click(object sender, EventArgs e) {
+        battleSystem.processAttack();
+        processTurn();
     }
 
-    /**
-     * Deduct one from battle counter.
-     */
-    protected void btnDuel_Click(object sender, EventArgs e)
-    {
-        DataController controller = new DataController();
-        int succ = controller.useBattleCounter(user.userId.Value);
-
-        if (succ == 1)
-        {
-            Session["Results"] = calculateBattle();
-            Response.Redirect("~/DuelResult.aspx");
+    private void displayBattleLog() {
+        battleLog.Text = "";
+        foreach(String msg in battleSystem.battleLog) {
+            battleLog.Text += "<p>" + msg + "</p>";
         }
-        else
-        {
-            Session.Remove("Opponent");
-            Session["ErrorMessage"] = "You have used up all your battle counters today.";
-            Response.Redirect("~/Default.aspx");
-        }
+        battleSystem.clearLog();
     }
 
-    /**
-     * True = Win. False = Lose.
-     */
-    private bool calculateBattle()
+    protected void btnRematch_Click(object sender, EventArgs e) {
+        btnDuel.Visible = true;
+        btnAtk.Visible = true;
+        btnRematch.Visible = false;
+        battleLog.Text = "";
+    }
+
+    private void createBattleSession() {
+        self = (CharacterObject) user.character;
+        Move m1 = new Move("DMG050-HEP005", "desc", true, 2, 4, "DMG040-WEK050", self.charId);
+        Move m2 = new Move("DMP020-BST020", "desc", false, 3, 3, "DMP020-RAV050", self.charId);
+        Move m3 = new Move("REP030-TUR003", "desc", true, 3, 2, "REP030", self.charId);
+        Move m4 = new Move("DMG099-END003", "desc", false, 3, 3, "DMG099", self.charId);
+        self.moveset[0] = m1;
+        self.moveset[1] = m2;
+        self.moveset[2] = m3;
+        self.moveset[3] = m4;
+
+        opponent = new CharacterObject(45, "Test Opponent", 5, "imageUrl");
+        Move k1 = new Move("DMG050-HEP005", "desc", true, 1, 4, "DMG050-HEP005", opponent.charId);
+        Move k2 = new Move("DMP020-BST020", "desc", true, 1, 4, "DMG050-HEP005", opponent.charId);
+        Move k3 = new Move("REP030-TUR003", "desc", true, 1, 4, "DMG050-HEP005", opponent.charId);
+        Move k4 = new Move("DMG099-END003", "desc", true, 1, 4, "DMG050-HEP005", opponent.charId);
+        opponent.moveset[0] = k1;
+        opponent.moveset[1] = k2;
+        opponent.moveset[2] = k3;
+        opponent.moveset[3] = k4;
+
+        battleSystem = new BattleSystem(self, opponent);
+        Session["BattleSystem"] = battleSystem;
+    }
+
+    private void processTurn()
     {
-        double atk = Convert.ToDouble(self.Attack);
-        double rate = Double.Parse(abs.Value);
-        double chance = (1 - Math.Sqrt(rate - 100) / 10);
+        if (battleSystem.isBattleFinished())
+        {
+            Session.Remove("BattleSystem");
+            if (battleSystem.playerIsWinner())
+            {
+                battleSystem.battleLog.Add("You win. Play again?");
+            }
+            else
+            {
+                battleSystem.battleLog.Add("You lost. Play again?");
+            }
+            btnDuel.Visible = false;
+            btnAtk.Visible = false;
+            btnRematch.Visible = true;
+        }
+        displayBattleLog();
+        refreshLayout();
+    }
 
-        Random rand = new Random();
-        double p = rand.NextDouble();
-        if (chance > p)
-        {
-            atk = atk * (rate / 100);
-        }
+    private void refreshLayout() {
+        Literal1.Text = "<p>" + battleSystem.self.moveset[0].name + "/ " + battleSystem.self.moveset[0].meterCost + "</p>";
+        Literal2.Text = "<p>" + battleSystem.self.moveset[1].name + "/ " + battleSystem.self.moveset[1].meterCost + "</p>";
+        Literal3.Text = "<p>" + battleSystem.self.moveset[2].name + "/ " + battleSystem.self.moveset[2].meterCost + "</p>";
+        Literal4.Text = "<p>" + battleSystem.self.moveset[3].name + "/ " + battleSystem.self.moveset[3].meterCost + "</p>";
 
-        double hp = Convert.ToDouble(opponent.Health);
-        p = rand.NextDouble();
-        if (p < 0.11)
-        {
-            hp = hp * 1.5;
-        }
-        else if (p < 0.22)
-        {
-            hp = hp * 1.3;
-        }
-        else if (p < 0.33)
-        {
-            hp = hp * 1.2;
-        }
+        charName.Text = "<p>" + battleSystem.self.Name + "</p>";
+        charHp.Text = "<p>" + battleSystem.self.Health + "/" + battleSystem.self.MaxHealth + "</p>";
+        charMeter.Text = "<p>Meter:" + battleSystem.self.Meter + "</p>";
 
-        Session["Damage"] = atk;
-        if (atk > hp)
-        { // Win
-            return true;
-        }
-        else if (Math.Abs(atk - hp) < 0.05)
-        {
-            return calculateBattle();
-        }
-        else
-        { //Lose
-            return false;
-        }
+        opName.Text = "<p>" + battleSystem.opponent.Name + "</p>";
+        opHp.Text = "<p>" + battleSystem.opponent.Health + "/" + battleSystem.opponent.MaxHealth + "</p>";
+        opMeter.Text = "<p>Meter:" + battleSystem.opponent.Meter + "</p>";
     }
 }

@@ -15,16 +15,19 @@
             <p>Statistics</p>
             <div>
                 <img class="small-icon" src="images/HP-Icon.png" />
-                <span><%= character.Health %>/<%= character.MaxHealth %></span>
-            </div>
+                <span><%= character.Health %>/<%= character.MaxHealth %></span></div>
             <div>
                 <img class="small-icon" src="images/Attack-Icon.png" />
-                <span><%= character.Attack %></span>
             </div>
             <div>
                 <img class="small-icon" src="images/Speed-Icon.png" />
-                <span><%= character.Speed %></span>
             </div>
+        </div>
+        <div>
+            <p>Move List</p>
+            <p>Select four skills from the ddl and add to character</p>
+            <asp:DropDownList ID="moveList" runat="server"></asp:DropDownList>
+            <asp:Button ID="btnAddMove" runat="server" Text="Add Skill" OnClick="btnAddMove_Click" />
         </div>
     </asp:Panel>
     <asp:Panel CssClass="text-mid view-character-panel" ID="noCharFoundPanel" runat="server">

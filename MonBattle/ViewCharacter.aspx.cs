@@ -1,5 +1,6 @@
 ﻿using MonBattle.Controllers;
 using MonBattle.Data;
+using MonBattle.Data.BattleMechanics;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -37,7 +38,7 @@ public partial class ViewCharacter : System.Web.UI.Page
         }
         else
         {
-            UserObject user = (UserObject)Session["User"];
+            user = (UserObject)Session["User"];
             if (user.character == null)
             {
                 Session["ErrorMessage"] = "You can create a Card Character here first before viewing it.";
@@ -61,5 +62,24 @@ public partial class ViewCharacter : System.Web.UI.Page
 
             imgAvatar.ImageUrl = character.ImageUrl;
         }
+
+        if(character.charId == user.character.charId) {
+            //movelist
+            moveList.ClearSelection();
+            moveList.Controls.Clear();
+            List<Move> moves = dataController.getMoveCatalog();
+            foreach(Move move in moves) {
+                ListItem item = new ListItem();
+                item.Text = move.name;
+                item.Value = move.moveId.ToString();
+                moveList.Items.Add(item);
+            }
+        }
+    }
+
+    protected void btnAddMove_Click(object sender, EventArgs e)
+    {
+        string moveId = moveList.SelectedValue;
+        dataController.assignMove(character.charId, moveId);
     }
 }

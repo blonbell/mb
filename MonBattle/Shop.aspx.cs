@@ -25,7 +25,7 @@ public partial class Shop : System.Web.UI.Page
      * Pre-checks
      * 1) User has CharacterObject
      * If failed, boot to default or equivalent
-     */
+     *
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["User"] == null)
@@ -66,7 +66,7 @@ public partial class Shop : System.Web.UI.Page
      * 2) Set training_finish_time to date.now() + 45 minutes, training_type to ATK
      * 2') Deduct Cost. Stored-Procedure?
      * 4) Reload Page (automatic)
-     */
+     *
     protected void btnAtk_Click(object sender, ImageClickEventArgs e)
     {
         trainMonster(1);
@@ -141,5 +141,5 @@ public partial class Shop : System.Web.UI.Page
         litTrainingTitle.Text = "Training Shop";
         trainingPanel.Visible = false;
         shopPanel.Visible = true;
-    }
+    }*/
 }

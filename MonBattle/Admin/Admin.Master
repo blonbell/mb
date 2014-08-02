@@ -57,6 +57,7 @@
                                 </asp:MenuItem>
 
                                 <asp:MenuItem Text="Other" Selectable="false">
+                                    <asp:MenuItem Text="Move Catalog" NavigateUrl="~/Admin/AddMoveCatalog.aspx"></asp:MenuItem>
                                     <asp:MenuItem Text="Banner" NavigateUrl="~/Admin/Banner.aspx"></asp:MenuItem>
                                 </asp:MenuItem>
                             </Items>

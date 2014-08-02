@@ -21,76 +21,85 @@ public partial class Duel {
     protected global::System.Web.UI.WebControls.Panel battlePanel;
     
     /// <summary>
-    /// btnBack control.
+    /// charName control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Button btnBack;
+    protected global::System.Web.UI.WebControls.Literal charName;
     
     /// <summary>
-    /// imgSelf control.
+    /// charHp control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Image imgSelf;
+    protected global::System.Web.UI.WebControls.Literal charHp;
     
     /// <summary>
-    /// atkIcon control.
+    /// charMeter control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Image atkIcon;
+    protected global::System.Web.UI.WebControls.Literal charMeter;
     
     /// <summary>
-    /// litAtk control.
+    /// Literal1 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Literal litAtk;
+    protected global::System.Web.UI.WebControls.Literal Literal1;
     
     /// <summary>
-    /// imgOther control.
+    /// Literal2 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Image imgOther;
+    protected global::System.Web.UI.WebControls.Literal Literal2;
     
     /// <summary>
-    /// hpIcon control.
+    /// Literal3 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Image hpIcon;
+    protected global::System.Web.UI.WebControls.Literal Literal3;
     
     /// <summary>
-    /// litHp control.
+    /// Literal4 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Literal litHp;
+    protected global::System.Web.UI.WebControls.Literal Literal4;
     
     /// <summary>
-    /// abs control.
+    /// TextBox1 control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.HiddenField abs;
+    protected global::System.Web.UI.WebControls.TextBox TextBox1;
+    
+    /// <summary>
+    /// btnAtk control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Button btnAtk;
     
     /// <summary>
     /// btnDuel control.
@@ -100,4 +109,49 @@ public partial class Duel {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Button btnDuel;
+    
+    /// <summary>
+    /// btnRematch control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Button btnRematch;
+    
+    /// <summary>
+    /// opName control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Literal opName;
+    
+    /// <summary>
+    /// opHp control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Literal opHp;
+    
+    /// <summary>
+    /// opMeter control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Literal opMeter;
+    
+    /// <summary>
+    /// battleLog control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Literal battleLog;
 }

@@ -6,6 +6,7 @@ using MonBattle.Models;
 using MonBattle.Data;
 using System.Data;
 using System.Data.SqlClient;
+using MonBattle.Data.BattleMechanics;
 
 namespace MonBattle.Controllers
 {
@@ -269,8 +270,8 @@ namespace MonBattle.Controllers
             int succ = dataModel.startTrainCharacter(user.userId.Value, character.charId, trainingTime, trainingType, cost);
             if (succ != 0)
             {
-                character.trainingFinishTime = trainingTime;
-                character.trainingType = (CharacterObject.trainingTypeEnum)trainingType;
+                //character.trainingFinishTime = trainingTime;
+                //character.trainingType = (CharacterObject.trainingTypeEnum)trainingType;
                 user.points -= cost;
             }
             return succ;
@@ -419,6 +420,10 @@ namespace MonBattle.Controllers
             CardBattleObject cardBattle = getCardBattleHelper(cardBattleResult);
 
             return cardBattle;
+        }
+
+        public List<CardVoterCounterObject> getVoteWinsAfterDate(String date) {
+            return dataModel.getVoteWinsAfterDate(date);
         }
 
         /// <summary>
@@ -600,6 +605,19 @@ namespace MonBattle.Controllers
             int? bannerId = dataModel.insertBanner(fileName, URL);
 
             return bannerId;
+        }
+
+        public void addMove(string Name, string Description, string Turns, string Linger, 
+            string MeterCost, string CommandStr, string redeemCost, string imageUrl) {
+            dataModel.addMove(Name, Description, Turns, Linger, MeterCost, CommandStr, redeemCost, imageUrl);
+        }
+
+        public List<Move> getMoveCatalog(){
+            return dataModel.getMoveCatalog();
+        }
+
+        public void assignMove(int charId, string moveId) {
+            dataModel.assignMove(charId, moveId);
         }
     }
 }
