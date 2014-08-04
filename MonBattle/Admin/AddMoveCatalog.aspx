@@ -58,10 +58,16 @@
         </div>
 
         <div>
-            <asp:Label ID="Label7" runat="server" Text="ImageUrl (make this a file upload)"></asp:Label>
-            <asp:TextBox ID="txtImageUrl" runat="server"></asp:TextBox>
+            <asp:Label ID="Label7" runat="server" Text="ImageUrl:"></asp:Label>
+            <asp:FileUpload ID="imgUpload" runat="server" />
         </div>
 
         <asp:Button ID="btnAddMove" runat="server" Text="Add Move" OnClick="btnAddMove_Click" />
+
+        <div>
+            <asp:Label ID="Label8" runat="server" Text="Delete Move ID:"></asp:Label>
+            <asp:TextBox ID="txtMoveId" runat="server"></asp:TextBox>
+            <asp:Button ID="btnRemoveMove" runat="server" Text="Remove Move" OnClick="btnRemoveMove_Click" />
+        </div>
     </asp:Panel>
 </asp:Content>

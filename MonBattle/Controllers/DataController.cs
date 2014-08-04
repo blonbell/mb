@@ -609,6 +609,10 @@ namespace MonBattle.Controllers
             dataModel.addMove(Name, Description, Turns, Linger, MeterCost, CommandStr, redeemCost, imageUrl);
         }
 
+        public void deleteMove(string moveId) {
+            dataModel.deleteMove(moveId);
+        }
+
         public List<Move> getTrainingCatalog(int charId) {
             return dataModel.getTrainingCatalog(charId);
         }

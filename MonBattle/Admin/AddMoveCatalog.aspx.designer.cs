@@ -175,13 +175,13 @@ namespace MonBattle.Admin {
         protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
-        /// txtImageUrl control.
+        /// imgUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtImageUrl;
+        protected global::System.Web.UI.WebControls.FileUpload imgUpload;
         
         /// <summary>
         /// btnAddMove control.
@@ -191,5 +191,32 @@ namespace MonBattle.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAddMove;
+        
+        /// <summary>
+        /// Label8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label8;
+        
+        /// <summary>
+        /// txtMoveId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMoveId;
+        
+        /// <summary>
+        /// btnRemoveMove control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRemoveMove;
     }
 }

@@ -1384,6 +1384,24 @@ namespace MonBattle.Models
             }
         }
 
+        public void deleteMove(string moveId) {
+            openSQLConnection();
+
+            string query = "DELETE FROM monbattle.Moves Where moveId = @moveId";
+
+            using (SqlCommand cmd = new SqlCommand(query, this.sqlConnection)) {
+                cmd.Parameters.Add(new SqlParameter("moveId", moveId));
+
+                try {
+                    cmd.ExecuteNonQuery();
+                } catch (SqlException e) {
+                    throw e;
+                } finally  {
+                    closeSQLConnection();
+                }
+            }
+        }
+
         public List<Move> getTrainingCatalog(int charId) {
             openSQLConnection();
             List<Move> moveList = new List<Move>();
