@@ -132,18 +132,19 @@ namespace MonBattle
         }
 
         protected void imgbtn_cardOne_Click(object sender, ImageClickEventArgs e) {
+            cardBattle = dataController.getCardBattleToday();
             voteCard((int) cardBattle.cardOne.cardId);
 
         }
 
         protected void imgbtn_cardTwo_Click(object sender, ImageClickEventArgs e) {
+            cardBattle = dataController.getCardBattleToday();
             voteCard((int) cardBattle.cardTwo.cardId);
         }
 
         private void voteCard(int cardId) {
             if (Session["User"] != null) {
                 user = (UserObject)Session["User"];
-                cardBattle = dataController.getCardBattleToday();
                 if (cardBattle != null && (int)cardBattle.cardBattleId == cardBattleID) {
                     bool succ = dataController.insertCardPick((int)user.userId, (int)cardBattle.cardBattleId, cardId);
                     if (succ) {
