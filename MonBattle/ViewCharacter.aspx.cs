@@ -64,22 +64,68 @@ public partial class ViewCharacter : System.Web.UI.Page
         }
 
         if(character.charId == user.character.charId) {
-            //movelist
-            moveList.ClearSelection();
-            moveList.Controls.Clear();
-            List<Move> moves = dataController.getMoveCatalog();
-            foreach(Move move in moves) {
-                ListItem item = new ListItem();
-                item.Text = move.name;
-                item.Value = move.moveId.ToString();
-                moveList.Items.Add(item);
-            }
+            populateMoveSetPanel();
         }
     }
 
-    protected void btnAddMove_Click(object sender, EventArgs e)
-    {
-        string moveId = moveList.SelectedValue;
-        dataController.assignMove(character.charId, moveId);
+    private void populateMoveSetPanel() {
+        MoveSetPanel.Controls.Clear();
+        List<Move> activeMoveSet = dataController.getOwnMoveCatalog(user.character.charId);
+
+        foreach(Move move in activeMoveSet) {
+            Panel row = new Panel();
+            row.ID = "Move " + move.moveId;
+
+            Image imgMove = new Image();
+            imgMove.ImageUrl = move.imageUrl;
+            row.Controls.Add(imgMove);
+
+            Label lblName = new Label();  //c.active
+            lblName.Text = move.name;
+            row.Controls.Add(lblName);
+
+            Label lblDesc = new Label();
+            lblDesc.Text = move.description;
+            row.Controls.Add(lblDesc);
+
+            Label lblMeterCost = new Label();
+            lblMeterCost.Text = "Redeem for " + move.meterCost + "MP";
+            row.Controls.Add(lblMeterCost);
+
+            RadioButtonList rblEnable = new RadioButtonList();
+            rblEnable.Attributes["moveId"] = move.moveId.ToString();
+            rblEnable.ID = "r" + move.moveId;
+            rblEnable.RepeatDirection = RepeatDirection.Horizontal;
+            ListItem itemEnable = new ListItem();
+            itemEnable.Text = "Enable";
+            itemEnable.Value = "1";
+
+            ListItem itemDisable = new ListItem();
+            itemDisable.Text = "Disable";
+            itemDisable.Value = "0";
+
+            rblEnable.Items.Add(itemEnable);
+            rblEnable.Items.Add(itemDisable);
+            rblEnable.SelectedValue = (move.inUse)? "1" : "0";
+            row.Controls.Add(rblEnable);
+
+            MoveSetPanel.Controls.Add(row);
+        }
+    }
+
+    protected void btnUpdateMove_Click(object sender, EventArgs e) {
+        ControlCollection controls = MoveSetPanel.Controls;
+        int c = controls.Count;
+        List<string> activeMoveIds = new List<string>();
+
+        foreach (Control control in controls) {
+            Panel row = (Panel) control;
+            RadioButtonList skillEnableList = (RadioButtonList) row.Controls[4];
+            if(skillEnableList.SelectedValue.Equals("1")) {
+                activeMoveIds.Add(skillEnableList.Attributes["moveId"]);
+            }
+        }
+
+        dataController.assignMove(user.character.charId, activeMoveIds);
     }
 }

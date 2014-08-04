@@ -15,6 +15,7 @@ public partial class Duel : System.Web.UI.Page {
 
     public UserObject user;
     public CharacterObject self, opponent;
+    private DataController controller = new DataController();
     private BattleSystem battleSystem;
 
     protected void Page_Load(object sender, EventArgs e) {
@@ -67,24 +68,13 @@ public partial class Duel : System.Web.UI.Page {
 
     private void createBattleSession() {
         self = (CharacterObject) user.character;
-        Move m1 = new Move("DMG050-HEP005", "desc", true, 2, 4, "DMG040-WEK050", self.charId);
-        Move m2 = new Move("DMP020-BST020", "desc", false, 3, 3, "DMP020-RAV050", self.charId);
-        Move m3 = new Move("REP030-TUR003", "desc", true, 3, 2, "REP030", self.charId);
-        Move m4 = new Move("DMG099-END003", "desc", false, 3, 3, "DMG099", self.charId);
-        self.moveset[0] = m1;
-        self.moveset[1] = m2;
-        self.moveset[2] = m3;
-        self.moveset[3] = m4;
+        self.Meter = 0;
+        self.clearMoveSet();
+        self.moveset = controller.getOwnActiveMoveCatalog(self.charId);
+        self.chooseMoves();
 
-        opponent = new CharacterObject(45, "Test Opponent", 5, "imageUrl");
-        Move k1 = new Move("DMG050-HEP005", "desc", true, 1, 4, "DMG050-HEP005", opponent.charId);
-        Move k2 = new Move("DMP020-BST020", "desc", true, 1, 4, "DMG050-HEP005", opponent.charId);
-        Move k3 = new Move("REP030-TUR003", "desc", true, 1, 4, "DMG050-HEP005", opponent.charId);
-        Move k4 = new Move("DMG099-END003", "desc", true, 1, 4, "DMG050-HEP005", opponent.charId);
-        opponent.moveset[0] = k1;
-        opponent.moveset[1] = k2;
-        opponent.moveset[2] = k3;
-        opponent.moveset[3] = k4;
+        opponent = new CharacterObject(4567, "Test Opponent", 5, "imageUrl");
+        opponent.chooseMoves();
 
         battleSystem = new BattleSystem(self, opponent);
         Session["BattleSystem"] = battleSystem;
@@ -112,10 +102,12 @@ public partial class Duel : System.Web.UI.Page {
     }
 
     private void refreshLayout() {
-        Literal1.Text = "<p>" + battleSystem.self.moveset[0].name + "/ " + battleSystem.self.moveset[0].meterCost + "</p>";
-        Literal2.Text = "<p>" + battleSystem.self.moveset[1].name + "/ " + battleSystem.self.moveset[1].meterCost + "</p>";
-        Literal3.Text = "<p>" + battleSystem.self.moveset[2].name + "/ " + battleSystem.self.moveset[2].meterCost + "</p>";
-        Literal4.Text = "<p>" + battleSystem.self.moveset[3].name + "/ " + battleSystem.self.moveset[3].meterCost + "</p>";
+        MoveSetPanel.Controls.Clear();
+        foreach (Move move in battleSystem.self.chosenMoves) {
+            LiteralControl moveDesc = new LiteralControl();
+            moveDesc.Text = "<p>id: " + move.moveId + " " + move.name + "/ " + move.meterCost + "</p>";
+            MoveSetPanel.Controls.Add(moveDesc);
+        }
 
         charName.Text = "<p>" + battleSystem.self.Name + "</p>";
         charHp.Text = "<p>" + battleSystem.self.Health + "/" + battleSystem.self.MaxHealth + "</p>";

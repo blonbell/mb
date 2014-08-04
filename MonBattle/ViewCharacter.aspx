@@ -26,8 +26,10 @@
         <div>
             <p>Move List</p>
             <p>Select four skills from the ddl and add to character</p>
-            <asp:DropDownList ID="moveList" runat="server"></asp:DropDownList>
-            <asp:Button ID="btnAddMove" runat="server" Text="Add Skill" OnClick="btnAddMove_Click" />
+            <asp:Panel ID="MoveSetPanel" runat="server">
+
+            </asp:Panel>
+            <asp:Button ID="btnUpdateMove" runat="server" Text="Update" OnClick="btnUpdateMove_Click" />
         </div>
     </asp:Panel>
     <asp:Panel CssClass="text-mid view-character-panel" ID="noCharFoundPanel" runat="server">

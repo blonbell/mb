@@ -270,8 +270,8 @@ namespace MonBattle.Controllers
             int succ = dataModel.startTrainCharacter(user.userId.Value, character.charId, trainingTime, trainingType, cost);
             if (succ != 0)
             {
-                //character.trainingFinishTime = trainingTime;
-                //character.trainingType = (CharacterObject.trainingTypeEnum)trainingType;
+                character.trainingFinishTime = trainingTime;
+                character.trainingType = (CharacterObject.trainingTypeEnum)trainingType;
                 user.points -= cost;
             }
             return succ;
@@ -543,11 +543,8 @@ namespace MonBattle.Controllers
         /// <param name="cardBattleId"></param>
         /// <param name="cardId"></param>
         /// <returns></returns>
-        public int? insertCardPick(int userId, int cardBattleId, int cardId)
-        {
-            int? cardPickId = dataModel.insertCardPick(userId, cardBattleId, cardId);
-
-            return cardPickId;
+        public bool insertCardPick(int userId, int cardBattleId, int cardId) {
+            return dataModel.insertCardPick(userId, cardBattleId, cardId);
         }
 
         /// <summary>
@@ -612,12 +609,45 @@ namespace MonBattle.Controllers
             dataModel.addMove(Name, Description, Turns, Linger, MeterCost, CommandStr, redeemCost, imageUrl);
         }
 
+        public List<Move> getTrainingCatalog(int charId) {
+            return dataModel.getTrainingCatalog(charId);
+        }
+
+        public List<Move> getOwnMoveCatalog(int charId) {
+            return dataModel.getOwnMoveCatalog(charId);
+        }
+
+        public List<Move> getOwnActiveMoveCatalog(int charId) {
+            List<Move> moves = dataModel.getOwnMoveCatalog(charId);
+            var activeMoves = from move in moves
+                              where move.inUse == true
+                              select move;
+            return activeMoves.ToList();
+        }
+
         public List<Move> getMoveCatalog(){
             return dataModel.getMoveCatalog();
         }
 
-        public void assignMove(int charId, string moveId) {
-            dataModel.assignMove(charId, moveId);
+        public int startMoveTrainCharacter(UserObject user, CharacterObject character, string moveId, DateTime trainingTime, int trainingType) {
+            int cost = dataModel.startTrainingMoveCharacter(user.userId.Value, character.charId, moveId, trainingTime, trainingType);
+            if (cost != -1)
+            {
+                character.trainingFinishTime = trainingTime;
+                character.trainingType = (CharacterObject.trainingTypeEnum)trainingType;
+                user.points -= cost;
+            }
+            return cost;
+        }
+
+        public void assignMove(int charId, List<string> moveIds) {
+            //turn list into data table
+            DataTable table = new DataTable();
+            table.Columns.Add("moveID", typeof(string));
+            foreach (var id in moveIds) {
+                table.Rows.Add(id);
+            }
+            dataModel.assignMove(charId, table);
         }
     }
 }

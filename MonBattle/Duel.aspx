@@ -11,10 +11,10 @@
         <asp:Literal ID="charHp" runat="server"></asp:Literal>
         <asp:Literal ID="charMeter" runat="server"></asp:Literal>
 
-        <asp:Literal ID="Literal1" runat="server"></asp:Literal>
-        <asp:Literal ID="Literal2" runat="server"></asp:Literal>
-        <asp:Literal ID="Literal3" runat="server"></asp:Literal>
-        <asp:Literal ID="Literal4" runat="server"></asp:Literal>
+        <asp:Panel ID="MoveSetPanel" runat="server">
+
+        </asp:Panel>
+
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         <asp:Button ID="btnAtk" runat="server" Text="Atk" OnClick="btnAtk_Click" />
         <asp:Button ID="btnDuel" runat="server" Text="Skill" OnClick="btnDuel_Click" />

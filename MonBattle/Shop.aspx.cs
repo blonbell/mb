@@ -1,5 +1,6 @@
 ﻿using MonBattle.Controllers;
 using MonBattle.Data;
+using MonBattle.Data.BattleMechanics;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -25,7 +26,7 @@ public partial class Shop : System.Web.UI.Page
      * Pre-checks
      * 1) User has CharacterObject
      * If failed, boot to default or equivalent
-     *
+     */
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["User"] == null)
@@ -66,7 +67,7 @@ public partial class Shop : System.Web.UI.Page
      * 2) Set training_finish_time to date.now() + 45 minutes, training_type to ATK
      * 2') Deduct Cost. Stored-Procedure?
      * 4) Reload Page (automatic)
-     *
+     */
     protected void btnAtk_Click(object sender, ImageClickEventArgs e)
     {
         trainMonster(1);
@@ -93,7 +94,11 @@ public partial class Shop : System.Web.UI.Page
         controller.attachUserCharacterObject(user);
         updateCharacterPanel();
 
-        lbl_popupMessage.Text = user.character.Name + "'s " + trType + " has increased by " + effect;
+        if (trType == CharacterObject.trainingTypeEnum.Move.ToString()) {
+            lbl_popupMessage.Text = user.character.Name + "'s learnt a new move";
+        } else {
+            lbl_popupMessage.Text = user.character.Name + "'s " + trType + " has increased by " + effect;
+        }
         popupext_vote.Show();
     }
 
@@ -141,5 +146,61 @@ public partial class Shop : System.Web.UI.Page
         litTrainingTitle.Text = "Training Shop";
         trainingPanel.Visible = false;
         shopPanel.Visible = true;
-    }*/
+        populateMoveSetPanel();
+    }
+
+    private void populateMoveSetPanel() {
+        MovesetPanel.Controls.Clear();
+        List<Move> trainingMoveSet = controller.getTrainingCatalog(user.character.charId);
+
+        foreach(Move move in trainingMoveSet) {
+            Panel row = new Panel();
+            row.ID = "Move " + move.moveId;
+
+            Image imgMove = new Image();
+            imgMove.ImageUrl = move.imageUrl;
+            row.Controls.Add(imgMove);
+
+            Label lblName = new Label();
+            lblName.Text = move.name;
+            row.Controls.Add(lblName);
+
+            Label lblDesc = new Label();
+            lblDesc.Text = move.description;
+            row.Controls.Add(lblDesc);
+
+            Label lblRedeemCost = new Label();
+            lblRedeemCost.Text = "Redeem for " + move.redeemCost + "MP";
+            row.Controls.Add(lblRedeemCost);
+
+            if (move.ownerId.HasValue) { //character has already learned this move
+                Label lblLearnt = new Label();
+                lblLearnt.Text = "LEARNED";
+                row.Controls.Add(lblLearnt);
+            } else {
+                Button btnLearn = new Button();
+                btnLearn.Attributes["moveId"] = move.moveId.ToString();
+                btnLearn.Text = "Train";
+                btnLearn.Click += btnMove_Click;
+                row.Controls.Add(btnLearn);
+            }
+            MovesetPanel.Controls.Add(row);
+        }
+    }
+
+    protected void btnMove_Click(object sender, EventArgs e) {
+        DateTime trainingTime = DateTime.Now;
+        trainingTime = trainingTime.AddSeconds(trainingHour);
+        int trainingType = 4;
+        Button button = (Button) sender;
+        string moveId = button.Attributes["moveId"];
+        //call startTrainingMove
+        int succ = controller.startMoveTrainCharacter(user, user.character, moveId, trainingTime, trainingType);
+        if (succ == -1) {
+            Session["ErrorMessage"] = "You do not have enough points to spend!";
+            Response.Redirect("~/Default.aspx");
+        } else {
+            showTrainingPanel(trainingTime, (CharacterObject.trainingTypeEnum) trainingType);
+        }
+    }
 }

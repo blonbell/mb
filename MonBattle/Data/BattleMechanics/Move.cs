@@ -9,61 +9,50 @@ namespace MonBattle.Data.BattleMechanics {
     public class Move {
         //database values
         public int moveId;
-        bool isRepeatEffect = true; //difference between activate on every turn and activate after n turns
+        public string name, description;
+        bool linger = true; //difference between activate on every turn and activate after n turns
         int activeTurns = 0, activateOnTurn = 0;
         public int meterCost = 0; 
-        public string name, description;
         public int redeemCost;
         public string imageUrl;
+        public bool inUse = false;
 
         // parsed from db string
         List<Effect> effects;
         
         //state vars
         bool expired = false;
-        int ownerId; //the charId
+        public int? ownerId; //the charId
         
-        public Move(string name, string description, string commandStr, int ownerId) {
+        public Move(string name, string commandStr, int? ownerId) {
             this.name = name;
-            this.description = description;
             this.ownerId = ownerId;
 
             effects = new List<Effect>();
-            
-            string[] effectStrings = commandStr.Split('-');
-            foreach(string effectStr in effectStrings) {
-                parseEffect(effectStr);
+            if(!String.IsNullOrEmpty(commandStr)) {
+                string[] effectStrings = commandStr.Split('-');
+                foreach(string effectStr in effectStrings) {
+                    parseEffect(effectStr);
+                }
             }
         }
 
-        public Move(string name, string description, bool isRepeatEffect, int turns, int meterCost, string commandStr, int ownerId) {
-            this.name = name;
-            this.description = description;
-            this.ownerId = ownerId;
-            this.meterCost = meterCost;
-            this.isRepeatEffect = isRepeatEffect;
-            if (isRepeatEffect) {
-                activeTurns = turns;
-            } else {
-                activateOnTurn = turns;
-            }
+        /*public Move(int moveId, string name, string description, bool isRepeatEffect, int turns, int meterCost, 
+            string commandStr, string imageUrl, bool active) {
+            init(moveId, name, description, false, 0, meterCost, commandStr, 0, imageUrl, 0);
+            inUse = active;
+        }*/
 
-            effects = new List<Effect>();
-            
-            string[] effectStrings = commandStr.Split('-');
-            foreach(string effectStr in effectStrings) {
-                parseEffect(effectStr);
-            }
-        }
-
-        public Move(int moveId, string name, string description, bool isRepeatEffect, int turns, int meterCost, string commandStr, int redeemCost, string imageUrl) {
+        public Move(int moveId, string name, string description, bool isRepeatEffect, int turns, 
+            int meterCost, string commandStr, int redeemCost, string imageUrl) {
             this.moveId = moveId;
             this.name = name;
             this.description = description;
             this.meterCost = meterCost;
-            this.isRepeatEffect = isRepeatEffect;
+            this.linger = isRepeatEffect;
             this.redeemCost = redeemCost;
             this.imageUrl = imageUrl;
+            //this.ownerId = ownerId;
             if (isRepeatEffect) {
                 activeTurns = turns;
             } else {
@@ -71,12 +60,14 @@ namespace MonBattle.Data.BattleMechanics {
             }
 
             effects = new List<Effect>();
-            
-            string[] effectStrings = commandStr.Split('-');
-            foreach(string effectStr in effectStrings) {
-                parseEffect(effectStr);
+            if(!String.IsNullOrEmpty(commandStr)) {
+                string[] effectStrings = commandStr.Split('-');
+                foreach(string effectStr in effectStrings) {
+                    parseEffect(effectStr);
+                }
             }
         }
+
 
         public bool isExpired() {
             return expired;
@@ -86,7 +77,7 @@ namespace MonBattle.Data.BattleMechanics {
          * Resolves if the move should be activated this turn.
          */
         public bool applyThisTurn(List<string> battleLog) {
-            if (isRepeatEffect) {
+            if (linger) {
                 activeTurns--;
             } else {
                 activateOnTurn--;
@@ -97,12 +88,10 @@ namespace MonBattle.Data.BattleMechanics {
             }
             return true;
         }
-        
-
 
         public void applyOnCharacter(CharacterObject character, List<string> battleLog) {
             foreach (Effect eff in effects) {
-                string effMsg = eff.applyEffect(character, ownerId, this.name);
+                string effMsg = eff.applyEffect(character, ownerId.Value, this.name);
                 if(!String.IsNullOrEmpty(effMsg)) {
                     battleLog.Add(effMsg);
                 }

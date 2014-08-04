@@ -37,8 +37,8 @@
             <asp:TextBox ID="txtTurn" runat="server"></asp:TextBox>
             <asp:RadioButtonList ID="lingerList" runat="server" 
                 RepeatDirection="Horizontal" RepeatLayout="Table">
-                <asp:ListItem Text="Linger" Value="0"></asp:ListItem>
-                <asp:ListItem Text="Charge" Value="1"></asp:ListItem>
+                <asp:ListItem Text="Linger" Value="1"></asp:ListItem>
+                <asp:ListItem Text="Charge" Value="0"></asp:ListItem>
             </asp:RadioButtonList>
         </div>
 

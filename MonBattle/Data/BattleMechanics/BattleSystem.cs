@@ -27,14 +27,15 @@ namespace MonBattle.Data.BattleMechanics {
             double percentage = (1.0 + calc);
             int atkPower = Math.Max(0, Convert.ToInt32((self.Attack * percentage) + 0.5));
 
-            string atkStr = String.Format("DMG{0:D3}-MET000", atkPower);
-            Move plainAttack = new Move("normal attack", null, atkStr, self.charId);
+            string atkStr = String.Format("DMG{0:D3}", atkPower);
+            Move plainAttack = new Move("normal attack", atkStr, self.charId);
             activeMoves.Add(plainAttack);
             executeTurn();
         }
 
         public void processInput(int index) {
-            Move choice = self.moveset[index];
+            Move choice = self.chosenMoves[index];
+            choice.ownerId = self.charId;
             if (self.Meter < choice.meterCost) {
                 battleLog.Add("You don't have enough meter to perform " + choice.name);
                 return;
@@ -51,12 +52,11 @@ namespace MonBattle.Data.BattleMechanics {
 
         public void executeTurn() { 
             //opponent selects a move or attack
-            //Random rand = new Random();
-            //int r = (int) Math.Floor(rand.NextDouble() * 4);
-            //Move randomMove = opponent.moveset[r];
-            //activeMoves.Add(randomMove);
-
-
+            Random rand = new Random();
+            int r = (int) Math.Floor(rand.NextDouble() * opponent.moveset.Count);
+            Move randomMove = opponent.moveset[r];
+            randomMove.ownerId = opponent.charId;
+            activeMoves.Add(randomMove);
 
             for (int i = activeMoves.Count -1 ; i >= 0; i--) {
                 if(activeMoves[i].applyThisTurn(battleLog)) {
