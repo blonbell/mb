@@ -15,12 +15,15 @@
             <p>Statistics</p>
             <div>
                 <img class="small-icon" src="images/HP-Icon.png" />
-                <span><%= character.Health %>/<%= character.MaxHealth %></span></div>
+                <span><%= character.Health %>/<%= character.MaxHealth %></span>
+            </div>
             <div>
                 <img class="small-icon" src="images/Attack-Icon.png" />
+                <span><%= character.Attack %></span>
             </div>
             <div>
                 <img class="small-icon" src="images/Speed-Icon.png" />
+                <span><%= character.Speed %></span>
             </div>
         </div>
         <div>

@@ -11,6 +11,7 @@ namespace MonBattle.Data.BattleMechanics {
         public int moveId;
         public string name, description;
         bool linger = true; //difference between activate on every turn and activate after n turns
+        int origTurns = 0;
         int activeTurns = 0, activateOnTurn = 0;
         public int meterCost = 0; 
         public int redeemCost;
@@ -37,12 +38,6 @@ namespace MonBattle.Data.BattleMechanics {
             }
         }
 
-        /*public Move(int moveId, string name, string description, bool isRepeatEffect, int turns, int meterCost, 
-            string commandStr, string imageUrl, bool active) {
-            init(moveId, name, description, false, 0, meterCost, commandStr, 0, imageUrl, 0);
-            inUse = active;
-        }*/
-
         public Move(int moveId, string name, string description, bool isRepeatEffect, int turns, 
             int meterCost, string commandStr, int redeemCost, string imageUrl) {
             this.moveId = moveId;
@@ -52,13 +47,9 @@ namespace MonBattle.Data.BattleMechanics {
             this.linger = isRepeatEffect;
             this.redeemCost = redeemCost;
             this.imageUrl = imageUrl;
-            //this.ownerId = ownerId;
-            if (isRepeatEffect) {
-                activeTurns = turns;
-            } else {
-                activateOnTurn = turns;
-            }
+            this.origTurns = turns;
 
+            refreshTurns();
             effects = new List<Effect>();
             if(!String.IsNullOrEmpty(commandStr)) {
                 string[] effectStrings = commandStr.Split('-');
@@ -68,6 +59,13 @@ namespace MonBattle.Data.BattleMechanics {
             }
         }
 
+        public void refreshTurns() {
+            if (linger) {
+                activeTurns = origTurns;
+            } else {
+                activateOnTurn = origTurns;
+            }
+        }
 
         public bool isExpired() {
             return expired;

@@ -18,7 +18,7 @@ namespace MonBattle.Data.BattleMechanics.Effects {
             string msg = null;
             if (character.charId == ownerId) {
                 character.flatDamageResist += effectValue;
-                msg = moveName + " activeted. " + character.Name + " gains more damage resistance";
+                msg = moveName + " activated. " + character.Name + " gains more damage resistance";
             }
             return msg;
         }

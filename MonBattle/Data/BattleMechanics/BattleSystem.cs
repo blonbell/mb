@@ -40,13 +40,19 @@ namespace MonBattle.Data.BattleMechanics {
                 battleLog.Add("You don't have enough meter to perform " + choice.name);
                 return;
             }
+
+            //check for duplicates
+            if(!activeMoves.Contains(choice)) {
+                activeMoves.Add(choice);
+            } else {
+                battleLog.Add("You cannot perform the same skill while it is in effect already.");
+                return;
+            }
+
             self.Meter -= choice.meterCost;
 
             string performMove = self.Name + " has performed " + choice.name + "!";
             battleLog.Add(performMove);
-            //check for duplicates
-            activeMoves.Add(choice);
-
             executeTurn();
         }
 
@@ -63,6 +69,7 @@ namespace MonBattle.Data.BattleMechanics {
                     activeMoves[i].applyOnCharacter(self, battleLog);
                     activeMoves[i].applyOnCharacter(opponent, battleLog);
                     if (activeMoves[i].isExpired()) {
+                        activeMoves[i].refreshTurns();
                         activeMoves.RemoveAt(i);
                     }
                 }
