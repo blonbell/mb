@@ -131,72 +131,34 @@ namespace MonBattle
 
         }
 
-        protected void imgbtn_cardOne_Click(object sender, ImageClickEventArgs e)
-        {
-            if (Session["User"] != null)
-            {
-                user = (UserObject)Session["User"];
+        protected void imgbtn_cardOne_Click(object sender, ImageClickEventArgs e) {
+            cardBattle = dataController.getCardBattleToday();
+            voteCard((int) cardBattle.cardOne.cardId);
 
-                cardBattle = dataController.getCardBattleToday();
-
-                if (cardBattle != null && (int)cardBattle.cardBattleId == cardBattleID)
-                {
-                    int? cardPickId = dataController.insertCardPick((int)user.userId, (int)cardBattle.cardBattleId, (int)cardBattle.cardOne.cardId);
-
-                    if (cardPickId != null)
-                    {
-                        lbl_popupMessage.Text = "Thank you for voting!";
-                        popupext_vote.Show();
-                    }
-                    else
-                    {
-                        lbl_popupMessage.Text = "There was an error with your vote.  Please contact an admin for support.";
-                        popupext_vote.Show();
-                    }
-                }
-                else
-                {
-                    lbl_popupMessage.Text = "This battle is no longer available for voting.";
-                    popupext_vote.Show();
-                }
-            }
-            else
-            {
-                Response.Redirect("Default.aspx");
-            }
         }
 
-        protected void imgbtn_cardTwo_Click(object sender, ImageClickEventArgs e)
-        {
-            if (Session["User"] != null)
-            {
+        protected void imgbtn_cardTwo_Click(object sender, ImageClickEventArgs e) {
+            cardBattle = dataController.getCardBattleToday();
+            voteCard((int) cardBattle.cardTwo.cardId);
+        }
+
+        private void voteCard(int cardId) {
+            if (Session["User"] != null) {
                 user = (UserObject)Session["User"];
-
-                cardBattle = dataController.getCardBattleToday();
-
-                if (cardBattle != null && (int)cardBattle.cardBattleId == cardBattleID)
-                {
-                    int? cardPickId = dataController.insertCardPick((int)user.userId, (int)cardBattle.cardBattleId, (int)cardBattle.cardTwo.cardId);
-
-                    if (cardPickId != null)
-                    {
+                if (cardBattle != null && (int)cardBattle.cardBattleId == cardBattleID) {
+                    bool succ = dataController.insertCardPick((int)user.userId, (int)cardBattle.cardBattleId, cardId);
+                    if (succ) {
                         lbl_popupMessage.Text = "Thank you for voting!";
                         popupext_vote.Show();
-                    }
-                    else
-                    {
+                    } else {
                         lbl_popupMessage.Text = "There was an error with your vote.  Please contact an admin for support.";
                         popupext_vote.Show();
                     }
-                }
-                else
-                {
+                } else {
                     lbl_popupMessage.Text = "This battle is no longer available for voting.";
                     popupext_vote.Show();
                 }
-            }
-            else
-            {
+            } else {
                 Response.Redirect("Default.aspx");
             }
         }

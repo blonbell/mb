@@ -58,24 +58,6 @@ namespace MonBattle {
         protected global::AjaxControlToolkit.ToolkitScriptManager scriptManager;
         
         /// <summary>
-        /// div_banner control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_banner;
-        
-        /// <summary>
-        /// img_banner control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton img_banner;
-        
-        /// <summary>
         /// imgbtn_logo control.
         /// </summary>
         /// <remarks>
@@ -101,6 +83,24 @@ namespace MonBattle {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Menu navbar_out;
+        
+        /// <summary>
+        /// div_banner control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_banner;
+        
+        /// <summary>
+        /// img_banner control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton img_banner;
         
         /// <summary>
         /// ContentPlaceHolder1 control.

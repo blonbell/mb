@@ -18,7 +18,7 @@ namespace MonBattle.Admin
                 UserObject user = (UserObject)Session["User"];
                 if (!(bool)user.isAdmin)
                 {
-                    Response.Redirect("~/Home.aspx");
+                    Response.Redirect("~/Default.aspx");
                 }
             }
 

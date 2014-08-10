@@ -85,6 +85,12 @@
                 <p class="clear-float"><span class="desc-left">Time</span><span class="desc-right"><%= trainingHour %>hours</span></p>
             </div>
         </div>
+        <div>
+            <h2>Learn New Moves</h2>
+            <asp:Panel ID="MovesetPanel" CssClass="" runat="server">
+
+            </asp:Panel>
+        </div>
     </asp:Panel>
 
     <asp:Panel ID="trainingPanel" CssClass="master-content" runat="server" Visible="false">
@@ -94,7 +100,7 @@
                     <asp:Image ID="trainingImgIcon" CssClass="desc-image large-icon" runat="server" />
                     <p class="clear-float">
                         <span class="desc-left">Effect</span><span class="desc-right">
-                            +<%= effect %><%= user.character.trainingType.ToString() %></span></p>
+                            +<%= effect %></span></p>
                 </div>
                 <div id = "trainingPanel-right" class="inline">
                     <div>
