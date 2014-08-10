@@ -7,19 +7,18 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F75F767C-3D6E-4602-864B-81132181207E}</ProjectGuid>
+    <ProjectGuid>{D1C03E82-C726-498B-87F7-0DDA8AB94200}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MonBattle</RootNamespace>
     <AssemblyName>MonBattle</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,7 +28,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,61 +36,32 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AjaxControlToolkit, Version=4.1.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\AjaxControlToolkit.7.1213\lib\40\AjaxControlToolkit.dll</HintPath>
-    </Reference>
-    <Reference Include="AjaxMin, Version=4.97.4951.28478, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\AjaxMin.4.97.4951.28483\lib\net40\AjaxMin.dll</HintPath>
-    </Reference>
-    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\MonBattle\MonBattle\MonBattle\bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Storage, Version=2.1.0.3, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\WindowsAzure.Storage.2.1.0.3\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data.Services.Client" />
-    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Admin\AddMoveCatalog.aspx" />
     <Content Include="Admin\AddNeutralMonster.aspx" />
     <Content Include="Admin\Banner.aspx" />
     <Content Include="Admin\Battle.aspx" />
@@ -104,7 +73,14 @@
     <Content Include="Admin\ResetBattleCounter.aspx" />
     <Content Include="Admin\User.aspx" />
     <Content Include="Admin\Users.aspx" />
+    <Content Include="Banner\1\banner_test.png" />
+    <Content Include="Banner\4\banner_test.png" />
     <Content Include="Battle.aspx" />
+    <Content Include="Card_Images\1\480px-Empyrean_Wind_God3.jpg" />
+    <Content Include="Card_Images\2\480px-Godsworn_Alexiel4.jpg" />
+    <Content Include="Card_Images\3\480px-Imperial_Dragoon4.jpg" />
+    <Content Include="Card_Images\4\480px-Empyrean_Wind_God3.jpg" />
+    <Content Include="Card_Images\7\480px-Imperial_Dragoon4.jpg" />
     <Content Include="CreateAChar.aspx" />
     <Content Include="css\battle.css" />
     <Content Include="css\characters.css" />
@@ -112,18 +88,29 @@
     <Content Include="css\listing.css" />
     <Content Include="css\shop.css" />
     <Content Include="css\styles.css" />
+    <Content Include="Data\styles_2.css" />
+    <Content Include="Default.aspx" />
     <Content Include="Duel.aspx" />
     <Content Include="DuelResult.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="images\ap_blue.png" />
     <Content Include="images\Attack-Icon.png" />
+    <Content Include="images\characters\085cbbf6-b2a3-41b7-8b2c-c6a39312b1d1.jpg" />
+    <Content Include="images\characters\16f488b0-6c1c-4c8f-8400-9d6ab8c127de.jpg" />
     <Content Include="images\characters\bd14569d-a03c-42fb-b42a-330fbd6339e0.jpg" />
+    <Content Include="images\characters\e7b61c18-6b8a-4e7a-a98a-e9eb6bd7d96b.jpg" />
     <Content Include="images\characters\neutral\1304556701332.jpg" />
+    <Content Include="images\characters\neutral\3dwesker.jpg" />
+    <Content Include="images\characters\neutral\charlaughsatyou.jpg" />
     <Content Include="images\characters\neutral\cooltoad.jpg" />
+    <Content Include="images\characters\neutral\gbalex.png" />
     <Content Include="images\characters\neutral\thatfeel.jpg" />
     <Content Include="images\characters\neutral\tidusinsanemode.jpg" />
     <Content Include="images\favicon_2.png" />
+    <Content Include="images\GBAlexSm.png" />
     <Content Include="images\How-Monbattle-Works.gif" />
     <Content Include="images\HP-Icon.png" />
+    <Content Include="images\hp_green.png" />
     <Content Include="images\Monbattle-Logo.png" />
     <Content Include="images\monbattle_logo.png" />
     <Content Include="images\monbattle_logo2.png" />
@@ -133,6 +120,7 @@
     <Content Include="images\monbattle_logo6.png" />
     <Content Include="images\monbattle_logo7.png" />
     <Content Include="images\Speed-Icon.png" />
+    <Content Include="images\squirtle.png" />
     <Content Include="images\Taskbar Background Color.jpg" />
     <Content Include="images\taskbar-battle-icon.png" />
     <Content Include="images\Taskbar-Points-Icon.png" />
@@ -143,16 +131,17 @@
     <Content Include="images\taskbar-social-icon.png" />
     <Content Include="images\vs.png" />
     <Content Include="images\vs_2.png" />
+    <Content Include="js\jquery.greyout.js" />
+    <Content Include="js\jquery.hoverizr.js" />
+    <Content Include="js\jquery.hoverizr.min.js" />
+    <Content Include="js\shop.js" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="PastBattles.aspx" />
     <Content Include="Register.aspx" />
-    <Content Include="Default.aspx" />
     <Content Include="Shop.aspx" />
     <Content Include="ViewCharacter.aspx" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -161,6 +150,13 @@
     </Compile>
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddMoveCatalog.aspx.cs">
+      <DependentUpon>AddMoveCatalog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddMoveCatalog.aspx.designer.cs">
+      <DependentUpon>AddMoveCatalog.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\AddNeutralMonster.aspx.cs">
       <DependentUpon>AddNeutralMonster.aspx</DependentUpon>
@@ -261,10 +257,31 @@
     <Compile Include="CreateAChar.aspx.designer.cs">
       <DependentUpon>CreateAChar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Data\BattleMechanics\BattleSystem.cs" />
+    <Compile Include="Data\BattleMechanics\Effect.cs" />
+    <Compile Include="Data\BattleMechanics\Effects\FlatDamageEffect.cs" />
+    <Compile Include="Data\BattleMechanics\Effects\FlatEffect.cs" />
+    <Compile Include="Data\BattleMechanics\Effects\FlatHealEffect.cs" />
+    <Compile Include="Data\BattleMechanics\Effects\FlatResistanceEffect.cs" />
+    <Compile Include="Data\BattleMechanics\Effects\PercentDamageEffect.cs" />
+    <Compile Include="Data\BattleMechanics\Effects\PercentEffect.cs" />
+    <Compile Include="Data\BattleMechanics\Effects\PercentHealEffect.cs" />
+    <Compile Include="Data\BattleMechanics\Effects\PercentResistanceEffect.cs" />
+    <Compile Include="Data\BattleMechanics\Effects\PercentWeaknessEffect.cs" />
+    <Compile Include="Data\BattleMechanics\Effects\SelfInflictDamageEffect.cs" />
+    <Compile Include="Data\BattleMechanics\Move.cs" />
     <Compile Include="Data\CardBattleObject.cs" />
     <Compile Include="Data\CardObject.cs" />
+    <Compile Include="Data\CardVoterObject.cs" />
     <Compile Include="Data\CharacterObject.cs" />
     <Compile Include="Data\UserObject.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Duel.aspx.cs">
       <DependentUpon>Duel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -319,13 +336,6 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Shop.aspx.cs">
       <DependentUpon>Shop.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -342,11 +352,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="MonBattle.Master" />
-    <Content Include="Admin\Admin.Master" />
     <Content Include="packages.config" />
+    <Content Include="Admin\Admin.Master" />
     <None Include="Properties\PublishProfiles\GoDaddy DEV.pubxml" />
-    <None Include="Properties\PublishProfiles\GoDaddy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -354,7 +364,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -370,7 +379,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:6232/</IISUrl>
+          <IISUrl>http://localhost:3234/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

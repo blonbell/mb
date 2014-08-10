@@ -77,7 +77,7 @@ namespace MonBattle
                         String hp = "?/?"; //opp[index].Health + "/" + opp[index].MaxHealth;
                         Panel hpLine = createStatisticLine(hp, "~/images/HP-Icon.png");
 
-                        String spd = opp[index].Speed.ToString();
+                        String spd = "";//opp[index].Speed.ToString();
                         Panel spdLine = createStatisticLine(spd, "~/images/Speed-Icon.png");
 
                         Label lblReward = new Label();

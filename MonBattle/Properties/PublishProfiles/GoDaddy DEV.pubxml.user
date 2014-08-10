@@ -8,50 +8,62 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
     <LastUsedPlatform>Any CPU</LastUsedPlatform>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQ4E9K0qMpUa7Op8d/iL9gQAAAAACAAAAAAAQZgAAAAEAACAAAAATIgKQK9ZPxnt6HHpYOO6iaWPT6chJpaEVG/K0J0rfigAAAAAOgAAAAAIAACAAAAAMA8bYg7XoH5gGP40T4k5LZixpsxgDqIwckhhDmtYBZCAAAACBfn4KB/8Az6ZkEgxhy6oFIVEqfYZgSZZhb/cE8irjJEAAAAAJZqaZwRPvRrHcVA715dNJz1DPJVCdhUHUC4xgrqZpukPCiWx2Oo7eOiwAoEW+Xg00d6NpT9L1GNBMqQ5dBWIv</EncryptedPassword>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA330/zVfeokWPYEH3/8OgjgAAAAACAAAAAAAQZgAAAAEAACAAAAD021HqdHVJrFu63ivmHcY8H87AddT/seedt29ieoc90QAAAAAOgAAAAAIAACAAAABM1KAFxouiS9ZFAPStfL7AiKNFqD8EIghMLx3bvih8FiAAAAC6smnKS1qQRSwwgVfR8I7QskuyRpfjIRffHEaxePPMQUAAAABST8cF5dSHzkR4dp9FCEgwNpuR8O8A9JGcimUJc6R4a/QKolJ8clCV9lIWwnbkOVG1qu2v4KvIuKG6atcZ6TCN</EncryptedPassword>
   </PropertyGroup>
   <ItemGroup>
+    <File Include=".gitignore">
+      <publishTime>08/10/2014 12:25:39</publishTime>
+    </File>
     <File Include="About.aspx">
-      <publishTime>04/12/2014 21:56:32</publishTime>
+      <publishTime>08/10/2014 12:25:39</publishTime>
+    </File>
+    <File Include="Admin/AddMoveCatalog.aspx">
+      <publishTime>08/10/2014 12:26:29</publishTime>
     </File>
     <File Include="Admin/AddNeutralMonster.aspx">
-      <publishTime>07/13/2014 15:55:27</publishTime>
+      <publishTime>08/10/2014 12:26:29</publishTime>
     </File>
     <File Include="Admin/Admin.Master">
-      <publishTime>07/13/2014 15:53:32</publishTime>
+      <publishTime>08/10/2014 12:26:30</publishTime>
     </File>
     <File Include="Admin/Banner.aspx">
-      <publishTime>05/25/2014 11:57:38</publishTime>
+      <publishTime>08/10/2014 12:26:30</publishTime>
     </File>
     <File Include="Admin/Battle.aspx">
-      <publishTime>05/03/2014 10:33:48</publishTime>
+      <publishTime>08/10/2014 12:26:30</publishTime>
     </File>
     <File Include="Admin/Battles.aspx">
-      <publishTime>04/10/2014 00:36:38</publishTime>
+      <publishTime>08/10/2014 12:26:30</publishTime>
     </File>
     <File Include="Admin/Card.aspx">
-      <publishTime>03/29/2014 23:18:48</publishTime>
+      <publishTime>08/10/2014 12:26:30</publishTime>
     </File>
     <File Include="Admin/Cards.aspx">
-      <publishTime>04/07/2014 23:20:42</publishTime>
+      <publishTime>08/10/2014 12:26:30</publishTime>
     </File>
     <File Include="Admin/Default.aspx">
-      <publishTime>03/30/2014 17:44:52</publishTime>
+      <publishTime>08/10/2014 12:26:30</publishTime>
     </File>
     <File Include="Admin/NeutralCharacterListing.aspx">
-      <publishTime>07/16/2014 14:46:35</publishTime>
+      <publishTime>08/10/2014 12:26:30</publishTime>
     </File>
     <File Include="Admin/ResetBattleCounter.aspx">
-      <publishTime>07/16/2014 14:55:18</publishTime>
+      <publishTime>08/10/2014 12:26:30</publishTime>
     </File>
     <File Include="Admin/User.aspx">
-      <publishTime>03/29/2014 12:41:26</publishTime>
+      <publishTime>08/10/2014 12:26:30</publishTime>
     </File>
     <File Include="Admin/Users.aspx">
-      <publishTime>07/13/2014 17:03:52</publishTime>
+      <publishTime>08/10/2014 12:26:30</publishTime>
+    </File>
+    <File Include="Banner/1/banner_test.png">
+      <publishTime>08/10/2014 12:26:53</publishTime>
+    </File>
+    <File Include="Banner/4/banner_test.png">
+      <publishTime>08/10/2014 12:26:53</publishTime>
     </File>
     <File Include="Battle.aspx">
-      <publishTime>07/13/2014 15:26:25</publishTime>
+      <publishTime>08/10/2014 12:25:39</publishTime>
     </File>
     <File Include="bin/AjaxControlToolkit.dll">
       <publishTime>03/30/2014 09:20:14</publishTime>
@@ -152,14 +164,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Microsoft.Data.OData.dll">
       <publishTime>03/30/2014 09:20:14</publishTime>
     </File>
-    <File Include="bin/Microsoft.WindowsAzure.Configuration.dll">
-      <publishTime>03/30/2014 09:20:14</publishTime>
-    </File>
     <File Include="bin/Microsoft.WindowsAzure.Storage.dll">
       <publishTime>03/30/2014 09:20:14</publishTime>
     </File>
     <File Include="bin/MonBattle.dll">
-      <publishTime>07/16/2014 15:56:01</publishTime>
+      <publishTime>08/10/2014 12:31:16</publishTime>
     </File>
     <File Include="bin/nl/AjaxControlToolkit.resources.dll">
       <publishTime>03/30/2014 09:20:14</publishTime>
@@ -212,152 +221,209 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/zh-Hant/System.Spatial.resources.dll">
       <publishTime>03/30/2014 09:20:14</publishTime>
     </File>
+    <File Include="Card_Images/1/480px-Empyrean_Wind_God3.jpg">
+      <publishTime>08/10/2014 12:27:16</publishTime>
+    </File>
+    <File Include="Card_Images/2/480px-Godsworn_Alexiel4.jpg">
+      <publishTime>08/10/2014 12:27:16</publishTime>
+    </File>
+    <File Include="Card_Images/3/480px-Imperial_Dragoon4.jpg">
+      <publishTime>08/10/2014 12:27:16</publishTime>
+    </File>
+    <File Include="Card_Images/4/480px-Empyrean_Wind_God3.jpg">
+      <publishTime>08/10/2014 12:27:16</publishTime>
+    </File>
+    <File Include="Card_Images/7/480px-Imperial_Dragoon4.jpg">
+      <publishTime>08/10/2014 12:27:16</publishTime>
+    </File>
     <File Include="CreateAChar.aspx">
-      <publishTime>07/16/2014 15:08:16</publishTime>
+      <publishTime>08/10/2014 12:25:46</publishTime>
     </File>
     <File Include="css/battle.css">
-      <publishTime>07/13/2014 15:26:19</publishTime>
+      <publishTime>08/10/2014 12:28:08</publishTime>
     </File>
     <File Include="css/characters.css">
-      <publishTime>07/06/2014 17:35:04</publishTime>
+      <publishTime>08/10/2014 12:28:08</publishTime>
     </File>
     <File Include="css/duel.css">
-      <publishTime>07/16/2014 13:33:37</publishTime>
+      <publishTime>08/10/2014 12:28:08</publishTime>
     </File>
     <File Include="css/listing.css">
-      <publishTime>07/13/2014 16:49:45</publishTime>
+      <publishTime>08/10/2014 12:28:08</publishTime>
     </File>
     <File Include="css/shop.css">
-      <publishTime>07/13/2014 15:10:48</publishTime>
+      <publishTime>08/10/2014 12:28:08</publishTime>
     </File>
     <File Include="css/styles.css">
-      <publishTime>07/16/2014 15:12:51</publishTime>
+      <publishTime>08/10/2014 12:28:08</publishTime>
     </File>
-    <File Include="css/styles_2.css">
-      <publishTime>05/03/2014 10:29:44</publishTime>
+    <File Include="Data/styles_2.css">
+      <publishTime>08/10/2014 12:28:33</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>07/16/2014 15:21:20</publishTime>
+      <publishTime>08/10/2014 12:25:39</publishTime>
     </File>
     <File Include="Duel.aspx">
-      <publishTime>07/16/2014 13:34:45</publishTime>
+      <publishTime>08/10/2014 12:25:39</publishTime>
     </File>
     <File Include="DuelResult.aspx">
-      <publishTime>07/16/2014 13:34:14</publishTime>
+      <publishTime>08/10/2014 12:25:39</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>03/29/2014 14:32:34</publishTime>
+      <publishTime>08/10/2014 12:25:39</publishTime>
+    </File>
+    <File Include="images/ap_blue.png">
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/Attack-Icon.png">
-      <publishTime>07/06/2014 17:39:28</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
+    </File>
+    <File Include="images/characters/085cbbf6-b2a3-41b7-8b2c-c6a39312b1d1.jpg">
+      <publishTime>08/10/2014 12:28:52</publishTime>
+    </File>
+    <File Include="images/characters/16f488b0-6c1c-4c8f-8400-9d6ab8c127de.jpg">
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/characters/bd14569d-a03c-42fb-b42a-330fbd6339e0.jpg">
-      <publishTime>07/06/2014 17:40:02</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
+    </File>
+    <File Include="images/characters/e7b61c18-6b8a-4e7a-a98a-e9eb6bd7d96b.jpg">
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/characters/neutral/1304556701332.jpg">
-      <publishTime>07/06/2014 17:40:02</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
+    </File>
+    <File Include="images/characters/neutral/3dwesker.jpg">
+      <publishTime>08/10/2014 12:28:52</publishTime>
+    </File>
+    <File Include="images/characters/neutral/charlaughsatyou.jpg">
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/characters/neutral/cooltoad.jpg">
-      <publishTime>07/06/2014 17:40:02</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
+    </File>
+    <File Include="images/characters/neutral/gbalex.png">
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/characters/neutral/thatfeel.jpg">
-      <publishTime>07/06/2014 17:40:02</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/characters/neutral/tidusinsanemode.jpg">
-      <publishTime>07/06/2014 17:40:02</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/favicon_2.png">
-      <publishTime>05/03/2014 10:44:04</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
+    </File>
+    <File Include="images/GBAlexSm.png">
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/How-Monbattle-Works.gif">
-      <publishTime>04/12/2014 21:51:12</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/HP-Icon.png">
-      <publishTime>07/06/2014 17:39:28</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
+    </File>
+    <File Include="images/hp_green.png">
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/Monbattle-Logo.png">
-      <publishTime>07/06/2014 17:39:28</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/monbattle_logo.png">
-      <publishTime>03/29/2014 18:28:02</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/monbattle_logo2.png">
-      <publishTime>03/29/2014 18:41:58</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/monbattle_logo3.png">
-      <publishTime>03/29/2014 22:35:06</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/monbattle_logo4.png">
-      <publishTime>03/29/2014 22:42:36</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/monbattle_logo5.png">
-      <publishTime>04/27/2014 11:23:04</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/monbattle_logo6.png">
-      <publishTime>04/27/2014 11:38:28</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/monbattle_logo7.png">
-      <publishTime>04/27/2014 11:49:12</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/Speed-Icon.png">
-      <publishTime>07/06/2014 17:39:28</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
+    </File>
+    <File Include="images/squirtle.png">
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/Taskbar Background Color.jpg">
-      <publishTime>07/06/2014 17:39:28</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/taskbar-battle-icon.png">
-      <publishTime>07/06/2014 17:39:28</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/Taskbar-Points-Icon.png">
-      <publishTime>07/06/2014 17:39:28</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/taskbar-profile-icon.png">
-      <publishTime>07/06/2014 17:39:28</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/taskbar-sign-in-icon.png">
-      <publishTime>07/06/2014 17:39:28</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/taskbar-sign-out-icon.png">
-      <publishTime>07/06/2014 17:39:28</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/taskbar-sign-up-icon.png">
-      <publishTime>07/06/2014 17:39:28</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/taskbar-social-icon.png">
-      <publishTime>07/06/2014 17:39:28</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/vs.png">
-      <publishTime>04/03/2014 20:03:22</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
     </File>
     <File Include="images/vs_2.png">
-      <publishTime>05/03/2014 10:15:20</publishTime>
+      <publishTime>08/10/2014 12:28:52</publishTime>
+    </File>
+    <File Include="js/jquery.greyout.js">
+      <publishTime>08/10/2014 12:29:07</publishTime>
+    </File>
+    <File Include="js/jquery.hoverizr.js">
+      <publishTime>08/10/2014 12:29:07</publishTime>
+    </File>
+    <File Include="js/jquery.hoverizr.min.js">
+      <publishTime>08/10/2014 12:29:07</publishTime>
+    </File>
+    <File Include="js/shop.js">
+      <publishTime>08/10/2014 12:29:07</publishTime>
     </File>
     <File Include="Login.aspx">
-      <publishTime>07/16/2014 15:19:29</publishTime>
+      <publishTime>08/10/2014 12:25:39</publishTime>
     </File>
     <File Include="Logout.aspx">
-      <publishTime>04/12/2014 16:47:50</publishTime>
+      <publishTime>08/10/2014 12:25:39</publishTime>
     </File>
     <File Include="MonBattle.Master">
-      <publishTime>07/16/2014 15:33:38</publishTime>
+      <publishTime>08/10/2014 12:25:39</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>03/30/2014 09:20:18</publishTime>
+      <publishTime>08/10/2014 12:25:39</publishTime>
     </File>
     <File Include="PastBattles.aspx">
-      <publishTime>04/12/2014 18:53:38</publishTime>
+      <publishTime>08/10/2014 12:25:39</publishTime>
     </File>
     <File Include="Register.aspx">
-      <publishTime>07/16/2014 15:10:38</publishTime>
+      <publishTime>08/10/2014 12:25:39</publishTime>
     </File>
     <File Include="Shop.aspx">
-      <publishTime>07/16/2014 14:27:37</publishTime>
+      <publishTime>08/10/2014 12:25:39</publishTime>
     </File>
     <File Include="ViewCharacter.aspx">
-      <publishTime>07/07/2014 01:22:10</publishTime>
+      <publishTime>08/10/2014 12:25:39</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/16/2014 15:56:07</publishTime>
+      <publishTime>08/10/2014 12:31:19</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Web.Configuration;
 using MonBattle.Data;
 using System.Data;
+using MonBattle.Data.BattleMechanics;
 
 namespace MonBattle.Models
 {
@@ -579,7 +580,7 @@ namespace MonBattle.Models
                         int speed = Convert.ToInt32(reader["Speed"]);
                         int rew = Convert.ToInt32(reader["Rewards"]);
                         string imageUrl = Convert.ToString(reader["ImageUrl"]);
-                        opp[ind] = new CharacterObject(charID, name, attack, health, health, speed, rew, imageUrl, null, null);
+                        //opp[ind] = new CharacterObject(charID, name, attack, health, health, speed, rew, imageUrl, null, null);
                         ind++;
                     }
                     return opp;
@@ -649,12 +650,11 @@ namespace MonBattle.Models
             {
                 int charId = Convert.ToInt32(reader["CharId"]);
                 String name = Convert.ToString(reader["Name"]);
+                String imageUrl = Convert.ToString(reader["imageUrl"]);
                 int attack = Convert.ToInt32(reader["Attack"]);
                 int health = Convert.ToInt32(reader["Health"]);
                 int maxhp = Convert.ToInt32(reader["MaxHealth"]);
                 int speed = Convert.ToInt32(reader["Speed"]);
-
-                String imageUrl = Convert.ToString(reader["imageUrl"]);
                 DateTime? finishTime = null;
                 int? trainingType = null;
                 if (!System.DBNull.Value.Equals(reader["TrainingFinishTime"]))
@@ -1082,6 +1082,36 @@ namespace MonBattle.Models
             return updateSuccessful;
         }
 
+        public List<CardVoterCounterObject> getVoteWinsAfterDate(String date) {
+            openSQLConnection();
+            List<CardVoterCounterObject> list = new List<CardVoterCounterObject>();
+
+            using (SqlCommand cmd = new SqlCommand("monbattle.GetWinnerVoteCounts", this.sqlConnection)) {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                try {
+                    cmd.Parameters.Add(new SqlParameter("StartDate", date));
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read()) {
+                        CardVoterCounterObject obj = new CardVoterCounterObject();
+                        obj.name = Convert.ToString(reader["username"]);
+                        obj.winCount = Convert.ToInt32(reader["votecounts"]);
+
+                        list.Add(obj);
+                    }
+
+
+
+
+                    return list;
+                } catch (SqlException e) {
+                    throw e;
+                }
+            }
+        }
+
         /// <summary>
         /// Gets the card battle for today
         /// </summary>
@@ -1133,20 +1163,16 @@ namespace MonBattle.Models
         }
 
         /// <summary>
-        /// Inserts a battle pick
+        /// Inserts a battle pick. Success returns true.
         /// </summary>
         /// <param name="userId"></param>
         /// <param name="cardBattleId"></param>
         /// <param name="cardId"></param>
         /// <returns></returns>
-        public int? insertCardPick(int userId, int cardBattleId, int cardId)
-        {
+        public bool insertCardPick(int userId, int cardBattleId, int cardId) {
             openSQLConnection();
 
-            int? cardPickId = null;
-
-            using (SqlCommand cmd = new SqlCommand("monbattle.InsertCardPick", this.sqlConnection))
-            {
+            using (SqlCommand cmd = new SqlCommand("monbattle.InsertCardPick", this.sqlConnection)) {
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add("@UserID", SqlDbType.Int);
@@ -1158,24 +1184,15 @@ namespace MonBattle.Models
                 cmd.Parameters.Add("@CardID", SqlDbType.Int);
                 cmd.Parameters["@CardID"].Value = cardId;
 
-                SqlParameter parameter = cmd.Parameters.Add("@CardPickID", SqlDbType.Int);
-                parameter.Direction = ParameterDirection.Output;
-
-                try
-                {
+                try {
                     cmd.ExecuteNonQuery();
-                    cardPickId = (int)cmd.Parameters["@CardPickID"].Value;
-                }
-                catch (SqlException e)
-                {
-                    throw e;
-                }
-                finally
-                {
+                } catch (SqlException e) {
+                    return false;
+                } finally {
                     closeSQLConnection();
                 }
             }
-            return cardPickId;
+            return true;
         }
 
 
@@ -1340,6 +1357,191 @@ namespace MonBattle.Models
                 }
             }
             return bannerId;
+        }
+
+        public void addMove(string Name, string Description, string Turns, string Linger, 
+            string MeterCost, string CommandStr, string redeemCost, string imageUrl) {
+            openSQLConnection();
+
+            using (SqlCommand cmd = new SqlCommand("monbattle.CreateMove", this.sqlConnection)) {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("Name", Name));
+                cmd.Parameters.Add(new SqlParameter("Description", Description));
+                cmd.Parameters.Add(new SqlParameter("Turns", Turns));
+                cmd.Parameters.Add(new SqlParameter("Linger", Linger));
+                cmd.Parameters.Add(new SqlParameter("MeterCost", MeterCost));
+                cmd.Parameters.Add(new SqlParameter("CommandStr", CommandStr));
+                cmd.Parameters.Add(new SqlParameter("redeemCost", redeemCost));
+                cmd.Parameters.Add(new SqlParameter("imageUrl", imageUrl));
+
+                try {
+                    cmd.ExecuteNonQuery();
+                } catch (SqlException e) {
+                    throw e;
+                } finally  {
+                    closeSQLConnection();
+                }
+            }
+        }
+
+        public void deleteMove(string moveId) {
+            openSQLConnection();
+
+            string query = "DELETE FROM monbattle.Moves Where moveId = @moveId";
+
+            using (SqlCommand cmd = new SqlCommand(query, this.sqlConnection)) {
+                cmd.Parameters.Add(new SqlParameter("moveId", moveId));
+
+                try {
+                    cmd.ExecuteNonQuery();
+                } catch (SqlException e) {
+                    throw e;
+                } finally  {
+                    closeSQLConnection();
+                }
+            }
+        }
+
+        public List<Move> getTrainingCatalog(int charId) {
+            openSQLConnection();
+            List<Move> moveList = new List<Move>();
+            using (SqlCommand cmd = new SqlCommand("monbattle.MoveGetTrainingCatalog", this.sqlConnection)) {
+                try {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(new SqlParameter("charId", charId));
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read()) {
+                        int moveId = Convert.ToInt32(reader["MoveId"]);
+                        string name = Convert.ToString(reader["name"]);
+                        string description = Convert.ToString(reader["description"]);
+                        int meterCost = Convert.ToInt32(reader["MeterCost"]);
+                        int redeemCost = Convert.ToInt32(reader["redeemCost"]);
+                        string imageUrl = Convert.ToString(reader["imageUrl"]);
+                        int? ownerId;
+                        if (DBNull.Value.Equals(reader["charID"])) {
+                            ownerId = null;
+                        } else {
+                            ownerId = Convert.ToInt32(reader["charID"]);
+                        }
+                         
+                        Move move = new Move(moveId, name, description, false, 0, meterCost, null, redeemCost, imageUrl);
+                        move.ownerId = ownerId;
+                        moveList.Add(move);
+                    }
+                    return moveList;
+                } catch (SqlException e) {
+                    throw e;
+                } finally  {
+                    closeSQLConnection();
+                }
+            }
+        }
+
+        public List<Move> getOwnMoveCatalog(int charId) {
+            openSQLConnection();
+            List<Move> moveList = new List<Move>();
+            using (SqlCommand cmd = new SqlCommand("monbattle.MoveGetOwnCatalog", this.sqlConnection)) {
+                try {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("charId", charId));
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read()) {
+                        int moveId = Convert.ToInt32(reader["MoveId"]);
+                        string name = Convert.ToString(reader["name"]);
+                        string description = Convert.ToString(reader["description"]);
+                        int meterCost = Convert.ToInt32(reader["MeterCost"]);
+                        string imageUrl = Convert.ToString(reader["imageUrl"]);
+                        bool active =  Convert.ToBoolean(reader["active"]);
+                        string commandStr = Convert.ToString(reader["commandStr"]);
+                        int turns = Convert.ToInt32(reader["turns"]);
+                        bool linger = Convert.ToBoolean(reader["linger"]);
+                        Move move = new Move(moveId, name, description, linger, turns, meterCost, commandStr, 0, imageUrl);
+                        move.inUse = active;
+                        moveList.Add(move);
+                    }
+                    return moveList;
+                } catch (SqlException e) {
+                    throw e;
+                } finally  {
+                    closeSQLConnection();
+                }
+            }
+        }
+
+        public List<Move> getMoveCatalog() {
+            openSQLConnection();
+            List<Move> moveList = new List<Move>();
+            using (SqlCommand cmd = new SqlCommand("monbattle.MoveGetEntireCatalog", this.sqlConnection)) {
+                try {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read()) {
+                        int moveId = Convert.ToInt32(reader["MoveId"]);
+                        string name = Convert.ToString(reader["name"]);
+                        string description = Convert.ToString(reader["description"]);
+                        int turns = Convert.ToInt32(reader["turns"]);
+                        bool linger = Convert.ToBoolean(reader["linger"]); 
+                        int meterCost = Convert.ToInt32(reader["MeterCost"]);
+                        string commandStr = Convert.ToString(reader["CommandStr"]);
+                        int redeemCost = Convert.ToInt32(reader["redeemCost"]);
+                        string imageUrl = Convert.ToString(reader["imageUrl"]);
+
+                        Move move = new Move(moveId, name, description, linger, turns, meterCost, commandStr, redeemCost, imageUrl);
+                        moveList.Add(move);
+                    }
+                    return moveList;
+                } catch (SqlException e) {
+                    throw e;
+                } finally  {
+                    closeSQLConnection();
+                }
+            }
+        }
+
+        public void assignMove(int charId, DataTable moveIds) {
+            openSQLConnection();
+
+            using (SqlCommand cmd = new SqlCommand("monbattle.MoveAssignToCharacter", this.sqlConnection)) {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("charId", charId));
+                cmd.Parameters.Add("moveIds", SqlDbType.Structured).Value = moveIds;
+
+                try {
+                    cmd.ExecuteNonQuery();
+                } catch (SqlException e) {
+                    throw e;
+                } finally {
+                    closeSQLConnection();
+                }
+            }
+        }
+
+        public int startTrainingMoveCharacter(int userId, int charId, string moveId, DateTime trainingTime, int trainingType) {
+            openSQLConnection();
+            using (SqlCommand cmd = new SqlCommand("monbattle.MoveStartTraining", this.sqlConnection))
+            {
+                try
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("OwnerID", userId));
+                    cmd.Parameters.Add(new SqlParameter("CharID", charId));
+                    cmd.Parameters.Add(new SqlParameter("MoveID", moveId));
+                    cmd.Parameters.Add(new SqlParameter("trainingTime", trainingTime));
+                    cmd.Parameters.Add(new SqlParameter("trainingType", trainingType));
+                    int succ = Convert.ToInt32(cmd.ExecuteScalar());
+                    return succ;
+                }
+                catch (SqlException exception)
+                {
+                    throw exception;
+                }
+                finally
+                {
+
+                }
+            }
         }
     }
 }

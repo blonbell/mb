@@ -26,6 +26,14 @@
                 <span><%= character.Speed %></span>
             </div>
         </div>
+        <div>
+            <p>Move List</p>
+            <p>Select four skills from the ddl and add to character</p>
+            <asp:Panel ID="MoveSetPanel" runat="server">
+
+            </asp:Panel>
+            <asp:Button ID="btnUpdateMove" runat="server" Text="Update" OnClick="btnUpdateMove_Click" />
+        </div>
     </asp:Panel>
     <asp:Panel CssClass="text-mid view-character-panel" ID="noCharFoundPanel" runat="server">
         <p>We did not find any info on the character specified.</p>

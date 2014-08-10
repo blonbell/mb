@@ -74,9 +74,6 @@
                         <td>
                             <asp:Image runat="server" ID="img_cardOne" Visible="false" Width="200px" />
                         </td>
-
-
-
                         <td style="text-align:right">
                             <asp:Image runat="server" ID="img_cardTwo" Visible="false" Width="200px" />
                         </td>
@@ -92,13 +89,22 @@
                         <td style="text-align:left">
                             <asp:Label runat="server" ID="lbl_cardOneVotes" Visible="false" Width="200px" style="text-align:center"></asp:Label>
                         </td>
-
                         <td>
 
                         </td>
-
                         <td style="text-align:right">
                             <asp:Label runat="server" ID="lbl_cardTwoVotes" Visible="false" Width="200px" style="text-align:center"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left">
+                            <asp:Literal ID="ltrCardOneVoters" runat="server"></asp:Literal>
+                        </td>
+                        <td>
+
+                        </td>
+                        <td style="text-align:right">
+                            <asp:Literal ID="ltrCardTwoVoters" runat="server"></asp:Literal>
                         </td>
                     </tr>
                 </table>

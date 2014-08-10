@@ -44,12 +44,12 @@
         });
     </script>    
 
-    <ajaxToolkit:ToolkitScriptManager runat="server" ID="scriptManager"></ajaxToolkit:ToolkitScriptManager>
-    
-    <div class="banner" id="div_banner" runat="server" visible="false">
+    <div class="banner" id="div1" visible="false">
         <div style="float:right; "><a href="mailto:admin@monbattle.com">Send Feedback</a></div>
-        <asp:ImageButton runat="server" ID="img_banner" Width="600px" Height="100px" Visible="false" />
+         <div class="clear-float"></div>
     </div>
+
+    <ajaxToolkit:ToolkitScriptManager runat="server" ID="scriptManager"></ajaxToolkit:ToolkitScriptManager>
 
     <div class="master-main">
 
@@ -102,7 +102,11 @@
                     </Items>
                 </asp:Menu>
             </div>
-            <div id="clearFloat" class="clear-float"></div>
+            <div class="clear-float"></div>
+        </div>
+
+        <div class="banner" id="div_banner" runat="server" visible="false">
+            <asp:ImageButton runat="server" ID="img_banner" Width="600px" Height="100px" Visible="false" />
         </div>
 
         <div class="master-content">
@@ -115,8 +119,7 @@
     <div class="master-footer" runat="server" id="div_admin" visible="false">
         <asp:HyperLink runat="server" ID="hyplnk_adminSite" Text="Administration" NavigateUrl="~/Admin/Default.aspx"></asp:HyperLink>
     </div>
-            
-
+     
     </form>
 </body>
 </html>

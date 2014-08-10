@@ -15,4 +15,9 @@ namespace MonBattle.Data {
             this.email = email;
         }
     }
+
+    public class CardVoterCounterObject {
+        public string name;
+        public int winCount;
+    }
 }
